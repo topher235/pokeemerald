@@ -223,6 +223,7 @@ static void Task_NewGameBirchSpeech_WaitForWhatsYourNameToPrint(u8);
 static void Task_NewGameBirchSpeech_WaitPressBeforeNameChoice(u8);
 static void Task_NewGameBirchSpeech_StartNamingScreen(u8);
 static void CB2_NewGameBirchSpeech_ReturnFromNamingScreen(void);
+static void NewGameBirchSpeech_SetDefaultPlayerGender(void);
 static void NewGameBirchSpeech_SetDefaultPlayerName(u8);
 static void Task_NewGameBirchSpeech_CreateNameYesNo(u8);
 static void Task_NewGameBirchSpeech_ProcessNameYesNoMenu(u8);
@@ -458,49 +459,11 @@ static const struct MenuAction sMenuActions_Gender[] = {
 };
 
 static const u8 *const sMalePresetNames[] = {
-    gText_DefaultNameStu,
-    gText_DefaultNameMilton,
-    gText_DefaultNameTom,
-    gText_DefaultNameKenny,
-    gText_DefaultNameReid,
-    gText_DefaultNameJude,
-    gText_DefaultNameJaxson,
-    gText_DefaultNameEaston,
-    gText_DefaultNameWalker,
-    gText_DefaultNameTeru,
-    gText_DefaultNameJohnny,
-    gText_DefaultNameBrett,
-    gText_DefaultNameSeth,
-    gText_DefaultNameTerry,
-    gText_DefaultNameCasey,
-    gText_DefaultNameDarren,
-    gText_DefaultNameLandon,
-    gText_DefaultNameCollin,
-    gText_DefaultNameStanley,
-    gText_DefaultNameQuincy
+    gText_DefaultNameChris,
 };
 
 static const u8 *const sFemalePresetNames[] = {
-    gText_DefaultNameKimmy,
-    gText_DefaultNameTiara,
-    gText_DefaultNameBella,
-    gText_DefaultNameJayla,
-    gText_DefaultNameAllie,
-    gText_DefaultNameLianna,
-    gText_DefaultNameSara,
-    gText_DefaultNameMonica,
-    gText_DefaultNameCamila,
-    gText_DefaultNameAubree,
-    gText_DefaultNameRuthie,
-    gText_DefaultNameHazel,
-    gText_DefaultNameNadine,
-    gText_DefaultNameTanja,
-    gText_DefaultNameYasmin,
-    gText_DefaultNameNicola,
-    gText_DefaultNameLillie,
-    gText_DefaultNameTerra,
-    gText_DefaultNameLucy,
-    gText_DefaultNameHalie
+    gText_DefaultNameSarah,
 };
 
 // The number of male vs. female names is assumed to be the same.
@@ -1058,7 +1021,7 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
             default:
                 gPlttBufferUnfaded[0] = RGB_BLACK;
                 gPlttBufferFaded[0] = RGB_BLACK;
-                gTasks[taskId].func = Task_NewGameBirchSpeech_Init;
+                gTasks[taskId].func = Task_NewGameBirchSpeech_Cleanup; // Task_NewGameBirchSpeech_Init;
                 break;
             case ACTION_CONTINUE:
                 gPlttBufferUnfaded[0] = RGB_BLACK;
@@ -1776,6 +1739,8 @@ static void Task_NewGameBirchSpeech_Cleanup(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
+        NewGameBirchSpeech_SetDefaultPlayerGender();
+        NewGameBirchSpeech_SetDefaultPlayerName(Random() % NUM_PRESET_NAMES);
         FreeAllWindowBuffers();
         FreeAndDestroyMonPicSprite(gTasks[taskId].tLotadSpriteId);
         ResetAllPicSprites();
@@ -2100,6 +2065,13 @@ static void NewGameBirchSpeech_ShowGenderMenu(void)
 static s8 NewGameBirchSpeech_ProcessGenderMenuInput(void)
 {
     return Menu_ProcessInputNoWrap();
+}
+
+static void NewGameBirchSpeech_SetDefaultPlayerGender()
+{
+    int gender = MALE;
+    // int gender = FEMALE;
+    gSaveBlock2Ptr->playerGender = gender;
 }
 
 static void NewGameBirchSpeech_SetDefaultPlayerName(u8 nameId)
