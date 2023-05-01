@@ -204,7 +204,7 @@ void NewGameInitData(void)
     WipeTrainerNameRecords();
     ResetTrainerHillResults();
     ResetContestLinkResults();
-    gSaveBlock2Ptr->expShare = 0;
+    gSaveBlock2Ptr->expShare = 1;
 }
 
 static void ResetMiniGamesRecords(void)
