@@ -3032,4 +3032,7 @@ extern const u8 gText_TellHimTheWords[];
 extern const u8 gText_ExpShareOn[];
 extern const u8 gText_ExpShareOff[];
 
+// Letters
+extern const u8 gText_Letter[];
+
 #endif // GUARD_STRINGS_H

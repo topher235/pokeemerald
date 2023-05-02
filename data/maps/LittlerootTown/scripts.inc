@@ -1019,3 +1019,18 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
 
+// todo: remove
+
+LittlerootTown_EventScript_GiveLetter::
+	lock
+	faceplayer
+	msgbox LittlerootTown_Text_GiveLetter, MSGBOX_DEFAULT
+	giveitem ITEM_LETTER_1_ENCODED, 1
+	closemessage
+	delay 30
+	end
+
+LittlerootTown_Text_GiveLetter:
+	.string "Here's a letter for you!$"
+
+// todo: end remove
