@@ -70,6 +70,7 @@ static void Task_UseRepel(u8);
 static void Task_CloseCantUseKeyItemMessage(u8);
 static void SetDistanceOfClosestHiddenItem(u8, s16, s16);
 static void CB2_OpenPokeblockFromBag(void);
+static void ItemUseCB_Letter(u8, TaskFunc);
 
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
@@ -1146,6 +1147,26 @@ void ItemUseInBattle_EnigmaBerry(u8 taskId)
 void ItemUseOutOfBattle_CannotUse(u8 taskId)
 {
     DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+}
+
+extern u8 LetterMsgScript[];
+
+void ItemUseOutOfBattle_Letter(u8 taskId)
+{
+    DisplayItemMessage(taskId, 1, gText_Letter, CloseItemMessage);
+    // gItemUseCB = ItemUseCB_Letter;
+    // u8 type;
+    // type = ItemId_GetType(gSpecialVar_ItemId) - 1;
+    // gBagMenu->newScreenCallback = sItemUseCallbacks[type];
+    
+    // SetUpItemUseCallback(taskId);
+}
+
+void ItemUseCB_Letter(u8 taskId, TaskFunc func)
+{
+    // LockPlayerFieldControls();
+    ScriptContext_SetupScript(LetterMsgScript);
+    DestroyTask(taskId);
 }
 
 #undef tUsingRegisteredKeyItem

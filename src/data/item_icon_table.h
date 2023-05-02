@@ -401,6 +401,23 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     // Emerald-only key items
     [ITEM_MAGMA_EMBLEM] = {gItemIcon_MagmaEmblem, gItemIconPalette_MagmaEmblem},
     [ITEM_OLD_SEA_MAP] = {gItemIcon_OldSeaMap, gItemIconPalette_OldSeaMap},
+
+    // Letters
+    // encoded icon: "letter"
+    [ITEM_LETTER_1_ENCODED] = {gItemIcon_Letter, gItemIconPalette_LavaCookieAndLetter},
+    // decoded options:
+    // bead_mail
+    // dream_mail
+    // fab_mail
+    // glitter_mail
+    // harbor_mail
+    // mech_mail
+    // orange_mail
+    // retro_mail
+    // shadow_mail
+    // tropic_mail
+    // wood_mail
+
     // Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
 };

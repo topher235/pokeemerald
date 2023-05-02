@@ -1549,3 +1549,7 @@ static const u8 sOldSeaMapDesc[] = _(
     "A faded sea chart\n"
     "that shows the way\n"
     "to a certain island.");
+
+static const u8 sLetter1EncodedDesc[] = _(
+    "A letter that is hard\n"
+    "to decypher.");

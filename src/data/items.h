@@ -4538,4 +4538,19 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
+
+    [ITEM_LETTER_1_ENCODED] =
+    {
+        .name = _("Letter 1"),
+        .itemId = ITEM_LETTER_1_ENCODED,
+        .price = 0,
+        .description = sLetter1EncodedDesc,
+        .importance = 1,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Letter,
+    },
+
+
 };
