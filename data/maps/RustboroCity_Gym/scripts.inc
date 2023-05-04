@@ -30,6 +30,12 @@ RustboroCity_Gym_EventScript_GiveRockTomb::
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM39
 	msgbox RustboroCity_Gym_Text_ExplainRockTomb, MSGBOX_DEFAULT
+	goto RustboroCity_Gym_EventScript_GiveLetter1Encoded
+	end
+
+RustboroCity_Gym_EventScript_GiveLetter1Encoded::
+	msgbox RustboroCity_Gym_ExplainLetter1Encoded, MSGBOX_DEFAULT
+	giveitem ITEM_LETTER_1_ENCODED, 1
 	release
 	end
 
@@ -281,3 +287,12 @@ RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
 	.string "You only have one POKéMON with you?\p"
 	.string "Please return with at least one more\n"
 	.string "POKéMON.$"
+
+RustboroCity_Gym_ExplainLetter1Encoded:
+	.string "Oh! I almost forgot...\n"
+	.string "I think a friend of yours wanted\p"
+	.string "me to give this to you.$"
+
+RustboroCity_Gym_Text_ReceivedLetter1Encoded:
+	.string "{PLAYER} received LETTER 1\n"
+	.string "from ROXANNE.$"

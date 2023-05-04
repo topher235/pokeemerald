@@ -1021,16 +1021,16 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 
 // todo: remove
 
-LittlerootTown_EventScript_GiveLetter::
+LittlerootTown_EventScript_GiveItem::
 	lock
 	faceplayer
-	msgbox LittlerootTown_Text_GiveLetter, MSGBOX_DEFAULT
-	giveitem ITEM_LETTER_1_ENCODED, 1
+	msgbox LittlerootTown_Text_GiveItem, MSGBOX_DEFAULT
+	giveitem ITEM_RARE_CANDY, 50
 	closemessage
 	delay 30
 	end
 
-LittlerootTown_Text_GiveLetter:
-	.string "Here's a letter for you!$"
+LittlerootTown_Text_GiveItem:
+	.string "Here's I have this for you!$"
 
 // todo: end remove

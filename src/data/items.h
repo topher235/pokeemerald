@@ -4541,7 +4541,7 @@ const struct Item gItems[] =
 
     [ITEM_LETTER_1_ENCODED] =
     {
-        .name = _("Letter 1"),
+        .name = _("LETTER 1"),
         .itemId = ITEM_LETTER_1_ENCODED,
         .price = 0,
         .description = sLetter1EncodedDesc,
