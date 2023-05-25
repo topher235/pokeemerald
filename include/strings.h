@@ -3034,5 +3034,7 @@ extern const u8 gText_ExpShareOff[];
 
 // Letters
 extern const u8 gText_Letter[];
+extern const u8 gText_LetterPageOne[];
+extern const u8 gText_LetterPageTwo[];
 
 #endif // GUARD_STRINGS_H
