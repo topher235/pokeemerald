@@ -1831,3 +1831,5 @@ const u8 gText_ExpShareOff[] = _("Turned off the Exp. Share.\pParty will no long
 
 // Letters
 const u8 gText_Letter[] = _("Here is a letter\nwith a new line too :){PAUSE_UNTIL_PRESS}");
+const u8 gText_LetterPageOne[] = _("Page 1");
+const u8 gText_LetterPageTwo[] = _("Page 2");

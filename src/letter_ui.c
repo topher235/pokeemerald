@@ -332,10 +332,10 @@ static void Menu_InitWindows(void)
 }
 
 static const u8 sText_pageOne[] = _("My Letter UI and ve\nry looonng test text");
-static const u8 sText_pages[][2] = [
-    _("Page 1"),
-    _("Page 2"),
-]
+static const u8 *const sText_pages[] = {
+    gText_LetterPageOne,
+    gText_LetterPageTwo
+};
 static void PrintToWindow(u8 windowId, u8 colorIdx)
 {
     const u8 *str = sText_pageOne;
@@ -382,13 +382,13 @@ static void Task_MenuTurnOff(u8 taskId)
 
 static void Task_UINextPage(u8 taskId)
 {
-    PrintToWindowPageTwo(WINDOW_1, FONT_WHITE);
+    PrintToWindowPageNumber(WINDOW_1, FONT_WHITE, 1);
     gTasks[taskId].func = Task_LetterMain;
 }
 
 static void Task_UIPreviousPage(u8 taskId)
 {
-    PrintToWindow(WINDOW_1, FONT_WHITE);
+    PrintToWindowPageNumber(WINDOW_1, FONT_WHITE, 0);
     gTasks[taskId].func = Task_LetterMain;
 
 }
