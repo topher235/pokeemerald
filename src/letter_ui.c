@@ -97,8 +97,8 @@ static const struct WindowTemplate sMenuWindowTemplates[] =
         .bg = 0,            // which bg to print text on
         .tilemapLeft = 4,   // position from left (per 8 pixels)
         .tilemapTop = 3,    // position from top (per 8 pixels)
-        .width = 10,        // width (per 8 pixels)
-        .height = 3,        // height (per 8 pixels)
+        .width = 15,        // width (per 8 pixels) -- how big the box is before text gets cut off
+        .height = 3,        // height (per 8 pixels) -- ^^
         .paletteNum = 15,   // palette index to use for text
         .baseBlock = 1,     // tile start in VRAM
     },
@@ -331,10 +331,11 @@ static void Menu_InitWindows(void)
     ScheduleBgCopyTilemapToVram(2);
 }
 
-static const u8 sText_MyMenu[] = _("My Letter UI and very looonng test text");
+static const u8 sText_pageOne[] = _("My Letter UI and ve\nry looonng test text");
+static const u8 sTest_pageTwo[] = _("Here's page 2");
 static void PrintToWindow(u8 windowId, u8 colorIdx)
 {
-    const u8 *str = sText_MyMenu;
+    const u8 *str = sText_pageOne;
     u8 x = 1;
     u8 y = 1;
 
@@ -362,6 +363,11 @@ static void Task_MenuTurnOff(u8 taskId)
     }
 }
 
+static void Task_UINextPage(u8 taskId)
+{
+    return;
+}
+
 
 /* This is the meat of the UI. This is where you wait for player inputs and can branch to other tasks accordingly */
 static void Task_MenuMain(u8 taskId)
@@ -371,5 +377,13 @@ static void Task_MenuMain(u8 taskId)
         PlaySE(SE_PC_OFF);
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_MenuTurnOff;
+    }
+    else if (JOY_NEW(CHAR_R_BUTTON))
+    {
+        return;
+    }
+    else if (JOY_NEW(CHAR_L_BUTTON))
+    {
+        return;
     }
 }
