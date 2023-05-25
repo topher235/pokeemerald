@@ -20,6 +20,7 @@
 #include "item.h"
 #include "item_menu.h"
 #include "item_use.h"
+#include "letter_ui.h"
 #include "mail.h"
 #include "main.h"
 #include "menu.h"
@@ -70,7 +71,7 @@ static void Task_UseRepel(u8);
 static void Task_CloseCantUseKeyItemMessage(u8);
 static void SetDistanceOfClosestHiddenItem(u8, s16, s16);
 static void CB2_OpenPokeblockFromBag(void);
-static void ItemUseCB_Letter(u8, TaskFunc);
+static void ItemUseCB_Letter();
 
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
@@ -1153,7 +1154,10 @@ extern u8 LetterMsgScript[];
 
 void ItemUseOutOfBattle_Letter(u8 taskId)
 {
-    DisplayItemMessage(taskId, 1, gText_Letter, CloseItemMessage);
+    // DisplayItemMessage(taskId, 1, gText_Letter, CloseItemMessage);
+    gBagMenu->newScreenCallback = ItemUseCB_Letter;
+    Task_FadeAndCloseBagMenu(taskId);
+    // LetterUI_Init(CB2_ReturnToBagMenuPocket);
     // gItemUseCB = ItemUseCB_Letter;
     // u8 type;
     // type = ItemId_GetType(gSpecialVar_ItemId) - 1;
@@ -1162,11 +1166,11 @@ void ItemUseOutOfBattle_Letter(u8 taskId)
     // SetUpItemUseCallback(taskId);
 }
 
-void ItemUseCB_Letter(u8 taskId, TaskFunc func)
+void ItemUseCB_Letter()
 {
     // LockPlayerFieldControls();
-    ScriptContext_SetupScript(LetterMsgScript);
-    DestroyTask(taskId);
+    // ScriptContext_SetupScript(LetterMsgScript);
+    LetterUI_Init(CB2_ReturnToBagMenuPocket);
 }
 
 #undef tUsingRegisteredKeyItem
