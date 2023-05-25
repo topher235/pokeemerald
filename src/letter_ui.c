@@ -332,6 +332,10 @@ static void Menu_InitWindows(void)
 }
 
 static const u8 sText_pageOne[] = _("My Letter UI and ve\nry looonng test text");
+static const u8 sText_pages[][2] = [
+    _("Page 1"),
+    _("Page 2"),
+]
 static void PrintToWindow(u8 windowId, u8 colorIdx)
 {
     const u8 *str = sText_pageOne;
@@ -345,9 +349,10 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
 }
 
 static const u8 sText_pageTwo[] = _("Here's page 2");
-static void PrintToWindowPageTwo(u8 windowId, u8 colorIdx)
+static void PrintToWindowPageNumber(u8 windowId, u8 colorIdx, u8 pageNumber)
 {
-    const u8 *str = sText_pageTwo;
+    // const u8 *str = sText_pageTwo;
+    const u8 *str = sText_pages[pageNumber];
     u8 x = 1;
     u8 y = 1;
 
