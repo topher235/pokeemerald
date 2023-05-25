@@ -65,7 +65,7 @@ static bool8 Menu_LoadGraphics(void);
 static void Menu_InitWindows(void);
 static void PrintToWindow(u8 windowId, u8 colorIdx);
 static void Task_MenuWaitFadeIn(u8 taskId);
-static void Task_MenuMain(u8 taskId);
+static void Task_LetterMain(u8 taskId);
 
 //==========CONST=DATA==========//
 static const struct BgTemplate sMenuBgTemplates[] =
@@ -332,7 +332,6 @@ static void Menu_InitWindows(void)
 }
 
 static const u8 sText_pageOne[] = _("My Letter UI and ve\nry looonng test text");
-static const u8 sTest_pageTwo[] = _("Here's page 2");
 static void PrintToWindow(u8 windowId, u8 colorIdx)
 {
     const u8 *str = sText_pageOne;
@@ -345,10 +344,23 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
     CopyWindowToVram(windowId, 3);
 }
 
+static const u8 sText_pageTwo[] = _("Here's page 2");
+static void PrintToWindowPageTwo(u8 windowId, u8 colorIdx)
+{
+    const u8 *str = sText_pageTwo;
+    u8 x = 1;
+    u8 y = 1;
+
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+    AddTextPrinterParameterized4(windowId, 1, x, y, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, str);
+    PutWindowTilemap(windowId);
+    CopyWindowToVram(windowId, 3);
+}
+
 static void Task_MenuWaitFadeIn(u8 taskId)
 {
     if (!gPaletteFade.active)
-        gTasks[taskId].func = Task_MenuMain;
+        gTasks[taskId].func = Task_LetterMain;
 }
 
 static void Task_MenuTurnOff(u8 taskId)
@@ -365,12 +377,20 @@ static void Task_MenuTurnOff(u8 taskId)
 
 static void Task_UINextPage(u8 taskId)
 {
-    return;
+    PrintToWindowPageTwo(WINDOW_1, FONT_WHITE);
+    gTasks[taskId].func = Task_LetterMain;
+}
+
+static void Task_UIPreviousPage(u8 taskId)
+{
+    PrintToWindow(WINDOW_1, FONT_WHITE);
+    gTasks[taskId].func = Task_LetterMain;
+
 }
 
 
 /* This is the meat of the UI. This is where you wait for player inputs and can branch to other tasks accordingly */
-static void Task_MenuMain(u8 taskId)
+static void Task_LetterMain(u8 taskId)
 {
     if (JOY_NEW(B_BUTTON))
     {
@@ -378,12 +398,14 @@ static void Task_MenuMain(u8 taskId)
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_MenuTurnOff;
     }
-    else if (JOY_NEW(CHAR_R_BUTTON))
+    else if (JOY_NEW(DPAD_RIGHT))
     {
-        return;
+        // also add if currentPage < totalPages so we don't try to render past the last page
+        gTasks[taskId].func = Task_UINextPage;
     }
-    else if (JOY_NEW(CHAR_L_BUTTON))
+    else if (JOY_NEW(DPAD_LEFT))
     {
-        return;
+        // also add if currentPage > 0 (or 1?) so we don't try to render prior to the first page
+        gTasks[taskId].func = Task_UIPreviousPage;
     }
 }
