@@ -34,6 +34,7 @@
 #include "constants/field_weather.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
+#include "constants/letters.h"
 
 /*
  * 
@@ -50,6 +51,15 @@ struct LetterResources
 enum WindowIds
 {
     WINDOW_1,
+};
+
+static const u8 *const sLetters[1][2] = 
+{
+    [LETTER_CHRIS] = 
+    {
+        gText_LetterPageOne,
+        gText_LetterPageTwo,
+    },
 };
 
 //==========EWRAM==========//
@@ -352,7 +362,8 @@ static const u8 sText_pageTwo[] = _("Here's page 2");
 static void PrintToWindowPageNumber(u8 windowId, u8 colorIdx, u8 pageNumber)
 {
     // const u8 *str = sText_pageTwo;
-    const u8 *str = sText_pages[pageNumber];
+    // const u8 *str = sText_pages[pageNumber];
+    const u8 *str = sLetters[LETTER_CHRIS][pageNumber];
     u8 x = 1;
     u8 y = 1;
 
