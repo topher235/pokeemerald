@@ -1153,17 +1153,14 @@ void ItemUseOutOfBattle_CannotUse(u8 taskId)
 
 void ItemUseOutOfBattle_Letter(u8 taskId)
 {
-    // gTasks[taskId].data[0] = LETTER_CHRIS;
-    // gBagMenu->newScreenCallback = ItemUseCB_Letter;
-    // BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-    // gTasks[taskId].func = Task_CloseBagMenu;
+    gBagMenu->newScreenCallback = ItemUseCB_Letter;
     Task_FadeAndCloseBagMenu(taskId);
-    LetterUI_Init(CB2_ReturnToBagMenuPocket);
 }
 
 void ItemUseCB_Letter()
 {
-    LetterUI_Init(CB2_ReturnToBagMenuPocket);
+    const u8 letter = gItems[gSpecialVar_ItemId].secondaryId;
+    LetterUI_Init(CB2_ReturnToBagMenuPocket, letter);
 }
 
 #undef tUsingRegisteredKeyItem

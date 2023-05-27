@@ -3,8 +3,7 @@
 
 #include "main.h"
 
-// void Task_OpenUI(u8 taskId);
-void LetterUI_Init(MainCallback callback);
+void LetterUI_Init(MainCallback callback, u8 letter);
 
 
 #endif // GUARD_LETTER_UI_H
