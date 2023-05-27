@@ -41,6 +41,7 @@
 #include "constants/event_objects.h"
 #include "constants/item_effects.h"
 #include "constants/items.h"
+#include "constants/letters.h"
 #include "constants/songs.h"
 
 static void SetUpItemUseCallback(u8);
@@ -1150,26 +1151,18 @@ void ItemUseOutOfBattle_CannotUse(u8 taskId)
     DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
 }
 
-extern u8 LetterMsgScript[];
-
 void ItemUseOutOfBattle_Letter(u8 taskId)
 {
-    // DisplayItemMessage(taskId, 1, gText_Letter, CloseItemMessage);
-    gBagMenu->newScreenCallback = ItemUseCB_Letter;
+    // gTasks[taskId].data[0] = LETTER_CHRIS;
+    // gBagMenu->newScreenCallback = ItemUseCB_Letter;
+    // BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+    // gTasks[taskId].func = Task_CloseBagMenu;
     Task_FadeAndCloseBagMenu(taskId);
-    // LetterUI_Init(CB2_ReturnToBagMenuPocket);
-    // gItemUseCB = ItemUseCB_Letter;
-    // u8 type;
-    // type = ItemId_GetType(gSpecialVar_ItemId) - 1;
-    // gBagMenu->newScreenCallback = sItemUseCallbacks[type];
-    
-    // SetUpItemUseCallback(taskId);
+    LetterUI_Init(CB2_ReturnToBagMenuPocket);
 }
 
 void ItemUseCB_Letter()
 {
-    // LockPlayerFieldControls();
-    // ScriptContext_SetupScript(LetterMsgScript);
     LetterUI_Init(CB2_ReturnToBagMenuPocket);
 }
 
