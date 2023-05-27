@@ -1030,7 +1030,44 @@ LittlerootTown_EventScript_GiveItem::
 	delay 30
 	end
 
+LittlerootTown_EventScript_GiveNationalMon::
+	lock
+	faceplayer
+	bufferspeciesname STR_VAR_1, SPECIES_ENTEI
+	msgbox LittlerootTown_Text_GiveNationalMon, MSGBOX_DEFAULT
+	givemon SPECIES_ENTEI, 5
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LittlerootTown_EventScript_SendNationalMonToParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LittlerootTown_EventScript_SendNationalMonToPC
+	hidemonpic
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
 LittlerootTown_Text_GiveItem:
 	.string "Here's I have this for you!$"
+
+LittlerootTown_Text_GiveNationalMon:
+	.string "I have this national mon for you$"
+
+LittlerootTown_EventScript_SendNationalMonToParty::
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_EventScript_ReceivedNationalMon
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto LittlerootTown_EventScript_ReceivedNationalMon
+	end
+
+LittlerootTown_EventScript_SendNationalMonToPC::
+	call Common_EventScript_TransferredToPC
+	goto LittlerootTown_EventScript_ReceivedNationalMon
+	end
+
+LittlerootTown_EventScript_ReceivedNationalMon::
+	hidemonpic
+	msgbox LittlerootTown_Text_NationalMonReceived, MSGBOX_DEFAULT
+	releaseall
+	end
+
+LittlerootTown_Text_NationalMonReceived:
+	.string "Enjoy :)$"
 
 // todo: end remove
