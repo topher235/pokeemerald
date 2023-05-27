@@ -47,6 +47,7 @@ struct LetterResources
     u8 gfxLoadState;
     u8* title;
     u8 pageNumber;
+    u8 letter;
 };
 
 enum WindowIds
@@ -148,9 +149,8 @@ static const u8 sMenuWindowFontColors[][3] =
 // }
 
 
-static u8 sText_Title[] = _("My Letter UI");
 // This is our main initialization function if you want to call the menu from elsewhere
-void LetterUI_Init(MainCallback callback)
+void LetterUI_Init(MainCallback callback, u8 letter)
 {
     if ((sLetterDataPtr = AllocZeroed(sizeof(struct LetterResources))) == NULL)
     {
@@ -163,6 +163,7 @@ void LetterUI_Init(MainCallback callback)
     sLetterDataPtr->savedCallback = callback;
     // sLetterDataPtr->title = sText_Title;
     sLetterDataPtr->pageNumber = 0;
+    sLetterDataPtr->letter = 0;
 
     SetMainCallback2(Menu_RunSetup);
 }
@@ -346,7 +347,8 @@ static void Menu_InitWindows(void)
 static void PrintToWindow(u8 windowId, u8 colorIdx)
 {
     const u8 pageNum = sLetterDataPtr->pageNumber;
-    const u8 *str = sLetters[LETTER_CHRIS][pageNum];
+    const u8 letter = sLetterDataPtr->letter;
+    const u8 *str = sLetters[letter][pageNum];
     u8 x = 1;
     u8 y = 1;
 

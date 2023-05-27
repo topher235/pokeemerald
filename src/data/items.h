@@ -4549,6 +4549,7 @@ const struct Item gItems[] =
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Letter,
+        .secondaryId = LETTER_CHRIS,
     },
 
 
