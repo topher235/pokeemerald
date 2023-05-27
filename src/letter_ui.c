@@ -46,6 +46,7 @@ struct LetterResources
     MainCallback savedCallback;     // determines callback to run when we exit. e.g. where do we want to go after closing the menu
     u8 gfxLoadState;
     u8* title;
+    u8 pageNumber;
 };
 
 enum WindowIds
@@ -161,6 +162,7 @@ void LetterUI_Init(MainCallback callback)
     sLetterDataPtr->gfxLoadState = 0;
     sLetterDataPtr->savedCallback = callback;
     // sLetterDataPtr->title = sText_Title;
+    sLetterDataPtr->pageNumber = 0;
 
     SetMainCallback2(Menu_RunSetup);
 }
@@ -341,29 +343,10 @@ static void Menu_InitWindows(void)
     ScheduleBgCopyTilemapToVram(2);
 }
 
-static const u8 sText_pageOne[] = _("My Letter UI and ve\nry looonng test text");
-static const u8 *const sText_pages[] = {
-    gText_LetterPageOne,
-    gText_LetterPageTwo
-};
 static void PrintToWindow(u8 windowId, u8 colorIdx)
 {
-    const u8 *str = sText_pageOne;
-    u8 x = 1;
-    u8 y = 1;
-
-    FillWindowPixelBuffer(windowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
-    AddTextPrinterParameterized4(windowId, 1, x, y, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, str);
-    PutWindowTilemap(windowId);
-    CopyWindowToVram(windowId, 3);
-}
-
-static const u8 sText_pageTwo[] = _("Here's page 2");
-static void PrintToWindowPageNumber(u8 windowId, u8 colorIdx, u8 pageNumber)
-{
-    // const u8 *str = sText_pageTwo;
-    // const u8 *str = sText_pages[pageNumber];
-    const u8 *str = sLetters[LETTER_CHRIS][pageNumber];
+    const u8 pageNum = sLetterDataPtr->pageNumber;
+    const u8 *str = sLetters[LETTER_CHRIS][pageNum];
     u8 x = 1;
     u8 y = 1;
 
@@ -393,13 +376,15 @@ static void Task_MenuTurnOff(u8 taskId)
 
 static void Task_UINextPage(u8 taskId)
 {
-    PrintToWindowPageNumber(WINDOW_1, FONT_WHITE, 1);
+    sLetterDataPtr->pageNumber++;
+    PrintToWindow(WINDOW_1, FONT_WHITE);
     gTasks[taskId].func = Task_LetterMain;
 }
 
 static void Task_UIPreviousPage(u8 taskId)
 {
-    PrintToWindowPageNumber(WINDOW_1, FONT_WHITE, 0);
+    sLetterDataPtr->pageNumber--;
+    PrintToWindow(WINDOW_1, FONT_WHITE);
     gTasks[taskId].func = Task_LetterMain;
 
 }
