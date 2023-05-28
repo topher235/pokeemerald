@@ -1086,4 +1086,51 @@ LittleRoot_Text_WarpNavelRockOne:
 LittleRoot_Text_WarpNavelRockTwo:
 	.string "Enjoy your trip.$"
 
+LittlerootTown_EventScript_DynamicBattleEngage::
+	lock
+	faceplayer
+	goto_if_set FLAG_DYNAMIC_BATTLE_COMPLETE, LittlerootTown_EventScript_DynamicBattleCompleted
+	goto_if_unset FLAG_DYNAMIC_BATTLE_COMPLETE, LittlerootTown_EventScript_DynamicBattleInquire
+	end
+
+LittlerootTown_EventScript_DynamicBattleInquire::
+	msgbox LittlerootTown_Text_DynamicBattleStart, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, LittlerootTown_EventScript_DynamicBattle
+	msgbox LittlerootTown_Text_DynamicBattleComeAgain, MSGBOX_DEFAULT
+	releaseall
+	end
+
+LittlerootTown_EventScript_DynamicBattle::
+	trainerbattle_single TRAINER_DYNAMIC_BATTLE, LittlerootTown_Text_DynamicBattleIntro, LittlerootTown_Text_DynamicBattleDefeat, LittlerootTown_EventScript_DynamicBattleVictory
+	end
+
+LittlerootTown_EventScript_DynamicBattleCompleted::
+	msgbox LittlerootTown_Text_DynamicBattleCompleted, MSGBOX_DEFAULT
+	releaseall
+	end
+
+LittlerootTown_EventScript_DynamicBattleVictory::
+	msgbox LittlerootTown_Text_DynamicBattlePostBattle, MSGBOX_DEFAULT
+	setflag FLAG_DYNAMIC_BATTLE_COMPLETE
+	releaseall
+	end
+
+LittlerootTown_Text_DynamicBattleStart:
+	.string "Do you want to battle?$"
+
+LittlerootTown_Text_DynamicBattleComeAgain:
+	.string "Come back when you want to battle.$"
+
+LittlerootTown_Text_DynamicBattleIntro:
+	.string "I'm a tough opponent!$"
+
+LittlerootTown_Text_DynamicBattleDefeat:
+	.string "I can't believe you won!$"
+
+LittlerootTown_Text_DynamicBattlePostBattle:
+	.string "That was a really good battle.$"
+
+LittlerootTown_Text_DynamicBattleCompleted:
+	.string "Thanks for the battle earlier!$"
+
 // todo: end remove
