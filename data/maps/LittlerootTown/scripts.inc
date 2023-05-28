@@ -1070,4 +1070,20 @@ LittlerootTown_EventScript_ReceivedNationalMon::
 LittlerootTown_Text_NationalMonReceived:
 	.string "Enjoy :)$"
 
+LittlerootTown_EventScript_WarpNavelRock::
+	lock
+	faceplayer
+	msgbox LittleRoot_Text_WarpNavelRockOne, MSGBOX_AUTOCLOSE
+	fadescreen FADE_TO_BLACK
+	setflag FLAG_REMOVE_WARP_FADE
+	msgbox LittleRoot_Text_WarpNavelRockTwo, MSGBOX_AUTOCLOSE
+	warp MAP_NAVEL_ROCK_EXTERIOR, 0, 0, 0
+	end
+
+LittleRoot_Text_WarpNavelRockOne:
+	.string "Go catch a pokemon.$"
+
+LittleRoot_Text_WarpNavelRockTwo:
+	.string "Enjoy your trip.$"
+
 // todo: end remove

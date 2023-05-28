@@ -1630,8 +1630,8 @@
 #define FLAG_UNUSED_0x95C                           (DAILY_FLAGS_START + 0x3C) // Unused Flag
 #define FLAG_UNUSED_0x95D                           (DAILY_FLAGS_START + 0x3D) // Unused Flag
 #define FLAG_UNUSED_0x95E                           (DAILY_FLAGS_START + 0x3E) // Unused Flag
-#define FLAG_UNUSED_0x95F                           (DAILY_FLAGS_START + 0x3F) // Unused Flag
-#define DAILY_FLAGS_END                             (FLAG_UNUSED_0x95F + (7 - FLAG_UNUSED_0x95F % 8))
+#define FLAG_REMOVE_WARP_FADE                       (DAILY_FLAGS_START + 0x3F)
+#define DAILY_FLAGS_END                             (FLAG_REMOVE_WARP_FADE + (7 - FLAG_REMOVE_WARP_FADE % 8))
 
 #define FLAGS_COUNT (DAILY_FLAGS_END + 1)
 
