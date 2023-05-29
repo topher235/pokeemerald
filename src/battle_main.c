@@ -1958,6 +1958,18 @@ static void SpriteCB_UnusedBattleInit_Main(struct Sprite *sprite)
     }
 }
 
+static u8 calculateAvgPlayerPartyLvl()
+{
+    // calculate average lvl of player party
+    u8 avgPartyLvl = 0;
+    u8 i;
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        avgPartyLvl += GetMonData(&gPlayerParty[i], MON_DATA_LEVEL);
+    }
+    return avgPartyLvl / gPlayerPartyCount;
+}
+
 static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)
 {
     u32 nameHash = 0;
@@ -1965,6 +1977,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
     u8 fixedIV;
     s32 i, j;
     u8 monsCount;
+    u8 avgPlayerPartyLvl;
 
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
@@ -1987,6 +2000,9 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
         {
             monsCount = gTrainers[trainerNum].partySize;
         }
+
+        // calculate the player party's average level
+        avgPlayerPartyLvl = calculateAvgPlayerPartyLvl();
 
         for (i = 0; i < monsCount; i++)
         {
@@ -2065,6 +2081,19 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
                     SetMonData(&party[i], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
                     SetMonData(&party[i], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
                 }
+                break;
+            }
+            case F_TRAINER_PARTY_LEVEL_DYNAMIC:
+            {
+                const struct TrainerMonNoItemDefaultMoves *partyData = gTrainers[trainerNum].party.NoItemDefaultMoves;
+
+                for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; j++)
+                    nameHash += gSpeciesNames[partyData[i].species][j];
+
+                personalityValue += nameHash << 8;
+                fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
+                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                SetMonData(&party[i], MON_DATA_LEVEL, &avgPlayerPartyLvl);
                 break;
             }
             }
