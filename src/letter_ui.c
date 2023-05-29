@@ -378,15 +378,21 @@ static void Task_MenuTurnOff(u8 taskId)
 
 static void Task_UINextPage(u8 taskId)
 {
-    sLetterDataPtr->pageNumber++;
-    PrintToWindow(WINDOW_1, FONT_WHITE);
+    if (sLetterDataPtr->pageNumber < (ARRAY_COUNT(sLetters[sLetterDataPtr->letter]) - 1))
+    {
+        sLetterDataPtr->pageNumber++;
+        PrintToWindow(WINDOW_1, FONT_WHITE);
+    }
     gTasks[taskId].func = Task_LetterMain;
 }
 
 static void Task_UIPreviousPage(u8 taskId)
 {
-    sLetterDataPtr->pageNumber--;
-    PrintToWindow(WINDOW_1, FONT_WHITE);
+    if (sLetterDataPtr->pageNumber > 0)
+    {
+        sLetterDataPtr->pageNumber--;
+        PrintToWindow(WINDOW_1, FONT_WHITE);
+    }
     gTasks[taskId].func = Task_LetterMain;
 
 }
