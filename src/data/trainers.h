@@ -10270,6 +10270,6 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = 0,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_TrainerDynamicBattle),
+        .party = NO_ITEM_DEFAULT_MOVES_DYNAMIC_LVL(sParty_TrainerDynamicBattle),
     },
 };
