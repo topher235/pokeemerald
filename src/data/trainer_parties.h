@@ -12460,3 +12460,31 @@ static const struct TrainerMonNoItemDefaultMoves sParty_TrainerSpecialEncounterD
         .species = SPECIES_LOTAD,
     }
 };
+
+static const struct TrainerMonNoItemDefaultMoves sParty_TrainerSpecialEncounterPetalburgCity[] = {
+    {
+        .iv = 30,
+        .lvl = 1,
+        .species = SPECIES_NUZLEAF,
+    },
+    {
+        .iv = 30,
+        .lvl = 1,
+        .species = SPECIES_ROSELIA,
+    },
+    {
+        .iv = 30,
+        .lvl = 1,
+        .species = SPECIES_DELCATTY,
+    },
+    {
+        .iv = 30,
+        .lvl = 1,
+        .species = SPECIES_BEAUTIFLY,
+    },
+    {
+        .iv = 30,
+        .lvl = 1,
+        .species = SPECIES_GARDEVOIR,
+    }
+};
