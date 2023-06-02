@@ -12442,3 +12442,21 @@ static const struct TrainerMonNoItemDefaultMoves sParty_TrainerDynamicBattle[] =
     .species = SPECIES_ABRA,
     }
 };
+
+static const struct TrainerMonNoItemDefaultMoves sParty_TrainerSpecialEncounterDewfordTown[] = {
+    {
+        .iv = 0,
+        .lvl = 1,
+        .species = SPECIES_SLAKOTH,
+    },
+    {
+        .iv = 0,
+        .lvl = 1,
+        .species = SPECIES_MAKUHITA,
+    },
+    {
+        .iv = 0,
+        .lvl = 1,
+        .species = SPECIES_LOTAD,
+    }
+};

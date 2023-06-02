@@ -1077,7 +1077,8 @@ LittlerootTown_EventScript_WarpNavelRock::
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_REMOVE_WARP_FADE
 	msgbox LittleRoot_Text_WarpNavelRockTwo, MSGBOX_AUTOCLOSE
-	warp MAP_NAVEL_ROCK_EXTERIOR, 0, 0, 0
+	// warp MAP_NAVEL_ROCK_EXTERIOR, 0, 0, 0
+	warp MAP_DEWFORD_TOWN, 0, 0, 0
 	end
 
 LittleRoot_Text_WarpNavelRockOne:
