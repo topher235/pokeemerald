@@ -10272,4 +10272,16 @@ const struct Trainer gTrainers[] = {
         .aiFlags = 0,
         .party = NO_ITEM_DEFAULT_MOVES_DYNAMIC_LVL(sParty_TrainerDynamicBattle),
     },
+
+    [TRAINER_SPECIAL_ENCOUNTER_DEWFORD_TOWN] =
+    {
+        .trainerClass = TRAINER_CLASS_EXPERT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_EXPERT_M,
+        .trainerName = _("ELIO"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = 0,
+        .party = NO_ITEM_DEFAULT_MOVES_DYNAMIC_LVL(sParty_TrainerSpecialEncounterDewfordTown),
+    },
 };

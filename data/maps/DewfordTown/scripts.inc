@@ -638,6 +638,39 @@ DewfordTown_EventScript_PhraseNotTrendyEnough::
 	release
 	end
 
+DewfordTown_EventScript_SpecialEncounter::
+	lock
+	faceplayer
+	goto_if_set FLAG_SPECIAL_ENCOUNTER_DEWFORD_TOWN_COMPLETE, DewfordTown_EventScript_SpecialEncounterCompleted
+	goto_if_unset FLAG_SPECIAL_ENCOUNTER_DEWFORD_TOWN_COMPLETE, DewfordTown_EventScript_SpecialEncounterGreeting
+	end
+
+DewfordTown_EventScript_SpecialEncounterCompleted::
+	msgbox DewfordTown_Text_SpecialEncounterCompleted, MSGBOX_DEFAULT
+	releaseall
+	end
+
+DewfordTown_EventScript_SpecialEncounterGreeting::
+	msgbox DewfordTown_Text_SpecialEncounterGreeting, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, DewfordTown_EventScript_SpecialEncounterBattle
+	msgbox DewfordTown_Text_SpecialEncounterComeBackWhenReady, MSGBOX_DEFAULT
+	releaseall
+	end
+
+DewfordTown_EventScript_SpecialEncounterBattle::
+	trainerbattle_single TRAINER_SPECIAL_ENCOUNTER_DEWFORD_TOWN, DewfordTown_Text_SpecialEncounterBattleIntro, DewfordTown_Text_SpecialEncounterBattleDefeat, DewfordTown_EventScript_SpecialEncounterBattleVictory
+	end
+
+DewfordTown_EventScript_SpecialEncounterBattleVictory::
+	msgbox DewfordTown_Text_SpecialEncounterPostBattle, MSGBOX_DEFAULT
+	setflag FLAG_SPECIAL_ENCOUNTER_DEWFORD_TOWN_COMPLETE
+	giveitem ITEM_MAX_ELIXIR, 2
+	giveitem ITEM_MAX_ETHER, 2
+	giveitem ITEM_MAX_POTION, 2
+	giveitem ITEM_MAX_REVIVE, 2
+	releaseall
+	end
+
 DewfordTown_Text_TinyIslandCommunity:
 	.string "DEWFORD is a tiny island community.\n"
 	.string "If something gets trendy here,\l"
@@ -800,3 +833,34 @@ DewfordTown_Text_YeahDefinitionOfInRightNow:
 	.string "Yeah, absolutely right!\p"
 	.string "“{STR_VAR_1}” is the\n"
 	.string "definition of “in” right now.$"
+
+DewfordTown_Text_SpecialEncounterGreeting:
+	.string "I've taught many, many trainers in\n"
+	.string "my lifetime.\p"
+	.string "Each of them has learned to use\n"
+	.string "their POKéMON to their max.\p"
+	.string "Would you like to test your\n"
+	.string "strength against mine?$"
+
+DewfordTown_Text_SpecialEncounterCompleted:
+	.string "I look forward to hearing many\n"
+	.string "stories of you and your POKéMON.$"
+
+DewfordTown_Text_SpecialEncounterComeBackWhenReady:
+	.string "Come back when you are ready to\n"
+	.string "show me your potential.$"
+
+DewfordTown_Text_SpecialEncounterBattleIntro:
+	.string "Show me what using your POKéMON to\n"
+	.string "their max looks like!$"
+
+DewfordTown_Text_SpecialEncounterBattleDefeat:
+	.string "Incredible! It's a beautiful sight to\n"
+	.string "see POKéMON used to their maximum\l"
+	.string "potential!$"
+
+DewfordTown_Text_SpecialEncounterPostBattle:
+	.string "You are a great trainer who uses\n"
+	.string "their POKéMON to their max!\p"
+	.string "Please take these items as a\n"
+	.string "reward for your hard work.$"
