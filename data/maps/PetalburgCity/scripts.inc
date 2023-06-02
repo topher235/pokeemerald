@@ -704,6 +704,60 @@ PetalburgCity_EventScript_GymBoy::
 	msgbox PetalburgCity_Text_AreYouRookieTrainer, MSGBOX_NPC
 	end
 
+PetalburgCity_EventScript_SpecialEncounter::
+	lock
+	faceplayer
+	goto_if_set FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_COMPLETE, PetalburgCity_EventScript_SpecialEncounterCompleted
+	goto_if_unset FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_COMPLETE, PetalburgCity_EventScript_SpecialEncounterGreeting
+	end
+
+PetalburgCity_EventScript_SpecialEncounterCompleted::
+	msgbox PetalburgCity_Text_SpecialEncounterCompleted, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PetalburgCity_EventScript_SpecialEncounterGreeting::
+	msgbox PetalburgCity_Text_SpecialEncounterGreeting, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, PetalburgCity_EventScript_SpecialEncounterBattle
+	msgbox PetalburgCity_Text_SpecialEncounterComeBackWhenReady, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PetalburgCity_EventScript_SpecialEncounterBattle::
+	trainerbattle_single TRAINER_SPECIAL_ENCOUNTER_PETALBURG_CITY, PetalburgCity_Text_SpecialEncounterBattleIntro, PetalburgCity_Text_SpecialEncounterBattleDefeat, PetalburgCity_EventScript_SpecialEncounterBattleVictory
+	end
+
+PetalburgCity_EventScript_SpecialEncounterBattleVictory::
+	msgbox PetalburgCity_Text_SpecialEncounterPostBattle, MSGBOX_DEFAULT
+	setflag FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_COMPLETE
+	bufferspeciesname STR_VAR_1, SPECIES_MILOTIC
+	givemon SPECIES_MILOTIC, 20
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PetalburgCity_EventScript_SendMonToParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PetalburgCity_EventScript_SendMonToPC
+	hidemonpic
+	goto Common_EventScript_NoMoreRoomForPokemon
+	releaseall
+	end
+
+PetalburgCity_EventScript_SendMonToParty::
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PetalburgCity_EventScript_ReceivedMon
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto PetalburgCity_EventScript_ReceivedMon
+	end
+
+PetalburgCity_EventScript_SendMonToPC::
+	call Common_EventScript_TransferredToPC
+	goto PetalburgCity_EventScript_ReceivedMon
+	end
+
+PetalburgCity_EventScript_ReceivedMon::
+	hidemonpic
+	msgbox PetalburgCity_Text_MonReceived, MSGBOX_DEFAULT
+	releaseall
+	end
+
 PetalburgCity_Text_WhereIsWally:
 	.string "Where has our WALLY gone?\p"
 	.string "We have to leave for VERDANTURF TOWN\n"
@@ -765,3 +819,41 @@ PetalburgCity_Text_ImLookingForTalentedTrainers:
 	.string "I'm roaming the land in search of\n"
 	.string "talented TRAINERS.\p"
 	.string "I'm sorry to have taken your time.$"
+
+PetalburgCity_Text_SpecialEncounterCompleted:
+	.string "One day my beauty will surpass\n"
+	.string "yours.\l"
+	.string "I hope everyone in HOENN gets to\n"
+	.string "see your beauty.$"
+
+PetalburgCity_Text_SpecialEncounterGreeting:
+	.string "I just won first place in the HOENN\n"
+	.string "national beauty pageant.\p"
+	.string "My POKéMON and I are the most\n"
+	.string "most beautiful.\p"
+	.string "You think you and your POKéMON are\n"
+	.string "more beautiful than us?$"
+
+PetalburgCity_Text_SpecialEncounterComeBackWhenReady:
+	.string "Hmph, I knew it...\n"
+	.string "Well, come back when you're\l"
+	.string "more beautiful.$"
+
+PetalburgCity_Text_SpecialEncounterBattleIntro:
+	.string "Show me what true beauty means\n"
+	.string "to you!$"
+
+PetalburgCity_Text_SpecialEncounterBattleDefeat:
+	.string "Wow, your POKéMON are gorgeous!$"
+
+PetalburgCity_Text_SpecialEncounterPostBattle:
+	.string "You have a true beauty, rarely\n"
+	.string "seen across the region.\p"
+	.string "Please take the most beautiful\n"
+	.string "POKéMON and show it off to the\l"
+	.string "world.\p"
+	.string "I will continue to work on\n"
+	.string "my beauty.$"
+
+PetalburgCity_Text_MonReceived:
+	.string "Received MILOTIC from FAUN.$"

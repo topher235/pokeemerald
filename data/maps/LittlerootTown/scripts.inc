@@ -1078,7 +1078,8 @@ LittlerootTown_EventScript_WarpNavelRock::
 	setflag FLAG_REMOVE_WARP_FADE
 	msgbox LittleRoot_Text_WarpNavelRockTwo, MSGBOX_AUTOCLOSE
 	// warp MAP_NAVEL_ROCK_EXTERIOR, 0, 0, 0
-	warp MAP_DEWFORD_TOWN, 0, 0, 0
+	// setflag FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_HIDE
+	warp MAP_PETALBURG_CITY, 0, 0, 0
 	end
 
 LittleRoot_Text_WarpNavelRockOne:

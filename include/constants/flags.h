@@ -1220,8 +1220,8 @@
 
 #define FLAG_DYNAMIC_BATTLE_COMPLETE                                0x493 // Unused Flag
 #define FLAG_SPECIAL_ENCOUNTER_DEWFORD_TOWN_COMPLETE                0x494
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
+#define FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_HIDE                  0x495
+#define FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_COMPLETE              0x496
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag

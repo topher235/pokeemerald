@@ -10284,4 +10284,16 @@ const struct Trainer gTrainers[] = {
         .aiFlags = 0,
         .party = NO_ITEM_DEFAULT_MOVES_DYNAMIC_LVL(sParty_TrainerSpecialEncounterDewfordTown),
     },
+
+    [TRAINER_SPECIAL_ENCOUNTER_PETALBURG_CITY] =
+    {
+        .trainerClass = TRAINER_CLASS_BEAUTY,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_BEAUTY,
+        .trainerName = _("FAUN"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = 0,
+        .party = NO_ITEM_DEFAULT_MOVES_DYNAMIC_LVL(sParty_TrainerSpecialEncounterPetalburgCity),
+    }
 };
