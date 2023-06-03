@@ -664,6 +664,8 @@ DewfordTown_EventScript_SpecialEncounterBattle::
 DewfordTown_EventScript_SpecialEncounterBattleVictory::
 	msgbox DewfordTown_Text_SpecialEncounterPostBattle, MSGBOX_DEFAULT
 	setflag FLAG_SPECIAL_ENCOUNTER_DEWFORD_TOWN_COMPLETE
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
 	giveitem ITEM_MAX_ELIXIR, 2
 	giveitem ITEM_MAX_ETHER, 2
 	giveitem ITEM_MAX_POTION, 2
