@@ -734,12 +734,12 @@ PetalburgCity_EventScript_SpecialEncounterBattleVictory::
 	givemon SPECIES_MILOTIC, 20
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PetalburgCity_EventScript_SendMonToParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PetalburgCity_EventScript_SendMonToPC
-	hidemonpic
 	goto Common_EventScript_NoMoreRoomForPokemon
 	releaseall
 	end
 
 PetalburgCity_EventScript_SendMonToParty::
+	call PetalburgCity_EventScript_ReceivedMonFanfare
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, PetalburgCity_EventScript_ReceivedMon
 	call Common_EventScript_GetGiftMonPartySlot
@@ -748,13 +748,29 @@ PetalburgCity_EventScript_SendMonToParty::
 	end
 
 PetalburgCity_EventScript_SendMonToPC::
+	call PetalburgCity_EventScript_ReceivedMonFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PetalburgCity_EventScript_MonTransferredToPC
+	call Common_EventScript_NameReceivedBoxMon
+	goto PetalburgCity_EventScript_MonTransferredToPC
+	end
+
+PetalburgCity_EventScript_ReceivedMonFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_MILOTIC
+	playfanfare MUS_OBTAIN_ITEM
+	message PetalburgCity_Text_MonReceived
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_MILOTIC
+	return
+
+PetalburgCity_EventScript_MonTransferredToPC::
 	call Common_EventScript_TransferredToPC
 	goto PetalburgCity_EventScript_ReceivedMon
 	end
 
 PetalburgCity_EventScript_ReceivedMon::
 	hidemonpic
-	msgbox PetalburgCity_Text_MonReceived, MSGBOX_DEFAULT
 	releaseall
 	end
 
