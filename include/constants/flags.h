@@ -1224,7 +1224,7 @@
 #define FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_COMPLETE              0x496
 #define FLAG_SPECIAL_ENCOUNTER_MAGMA_HIDEOUT_HIDE                   0x497
 #define FLAG_SPECIAL_ENCOUNTER_MAGMA_HIDEOUT_COMPLETE               0x498
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
+#define FLAG_GIVE_INCENSE                                           0x499 // Unused Flag
 #define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
 #define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
 #define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
