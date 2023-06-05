@@ -146,6 +146,11 @@ void ResetMenuAndMonGlobals(void)
     ResetPokeblockScrollPositions();
 }
 
+void ResetSpecialEncounters(void)
+{
+    FlagSet(FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_HIDE);
+}
+
 void NewGameInitData(void)
 {
     if (gSaveFileStatus == SAVE_STATUS_EMPTY || gSaveFileStatus == SAVE_STATUS_CORRUPT)
@@ -204,6 +209,7 @@ void NewGameInitData(void)
     WipeTrainerNameRecords();
     ResetTrainerHillResults();
     ResetContestLinkResults();
+    ResetSpecialEncounters();
     gSaveBlock2Ptr->expShare = 1;
 }
 
