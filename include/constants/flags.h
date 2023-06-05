@@ -1222,8 +1222,8 @@
 #define FLAG_SPECIAL_ENCOUNTER_DEWFORD_TOWN_COMPLETE                0x494
 #define FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_HIDE                  0x495
 #define FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_COMPLETE              0x496
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
+#define FLAG_SPECIAL_ENCOUNTER_MAGMA_HIDEOUT_HIDE                   0x497
+#define FLAG_SPECIAL_ENCOUNTER_MAGMA_HIDEOUT_COMPLETE               0x498
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
 #define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
 #define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag

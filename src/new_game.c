@@ -148,7 +148,10 @@ void ResetMenuAndMonGlobals(void)
 
 void ResetSpecialEncounters(void)
 {
+    // Set the flags to hide special encounters until they're
+    // ready to be shown
     FlagSet(FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_HIDE);
+    FlagSet(FLAG_SPECIAL_ENCOUNTER_MAGMA_HIDEOUT_HIDE);
 }
 
 void NewGameInitData(void)

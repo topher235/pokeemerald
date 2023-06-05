@@ -10295,5 +10295,17 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = 0,
         .party = NO_ITEM_DEFAULT_MOVES_DYNAMIC_LVL(sParty_TrainerSpecialEncounterPetalburgCity),
+    },
+
+    [TRAINER_SPECIAL_ENCOUNTER_MAGMA_HIDEOUT] =
+    {
+        .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_MAGMA_ADMIN,
+        .trainerName = _("ASDEF"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = 0,
+        .party = NO_ITEM_DEFAULT_MOVES_DYNAMIC_LVL(sParty_TrainerSpecialEncounterMagmaHideout),
     }
 };
