@@ -2094,7 +2094,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
                 // formula: random() % (upper - lower + 1) + lower
-                opponentMonLvl = (Random() % ((avgPlayerPartyLvl + 2) - (avgPlayerPartyLvl - 2) + 1)) + (avgPlayerPartyLvl - 2);
+                opponentMonLvl = (Random() % ((avgPlayerPartyLvl + 4) - (avgPlayerPartyLvl) + 1)) + (avgPlayerPartyLvl);
                 CreateMon(&party[i], partyData[i].species, opponentMonLvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
                 break;
             }
