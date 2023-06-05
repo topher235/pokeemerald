@@ -770,7 +770,6 @@ PetalburgCity_EventScript_MonTransferredToPC::
 	end
 
 PetalburgCity_EventScript_ReceivedMon::
-	hidemonpic
 	releaseall
 	end
 

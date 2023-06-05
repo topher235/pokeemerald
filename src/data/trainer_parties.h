@@ -12488,3 +12488,31 @@ static const struct TrainerMonNoItemDefaultMoves sParty_TrainerSpecialEncounterP
         .species = SPECIES_GARDEVOIR,
     }
 };
+
+static const struct TrainerMonNoItemDefaultMoves sParty_TrainerSpecialEncounterMagmaHideout[] = {
+    {
+        .iv = 40,
+        .lvl = 1,
+        .species = SPECIES_PIDGEOTTO,
+    },
+    {
+        .iv = 40,
+        .lvl = 1,
+        .species = SPECIES_MACHAMP,
+    },
+    {
+        .iv = 40,
+        .lvl = 1,
+        .species = SPECIES_CHARIZARD,
+    },
+    {
+        .iv = 40,
+        .lvl = 1,
+        .species = SPECIES_GYARADOS,
+    },
+    {
+        .iv = 40,
+        .lvl = 1,
+        .species = SPECIES_ALAKAZAM,
+    }
+};

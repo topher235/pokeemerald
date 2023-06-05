@@ -1038,7 +1038,6 @@ LittlerootTown_EventScript_GiveNationalMon::
 	givemon SPECIES_ENTEI, 5
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LittlerootTown_EventScript_SendNationalMonToParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LittlerootTown_EventScript_SendNationalMonToPC
-	hidemonpic
 	goto Common_EventScript_NoMoreRoomForPokemon
 	end
 
@@ -1062,7 +1061,6 @@ LittlerootTown_EventScript_SendNationalMonToPC::
 	end
 
 LittlerootTown_EventScript_ReceivedNationalMon::
-	hidemonpic
 	msgbox LittlerootTown_Text_NationalMonReceived, MSGBOX_DEFAULT
 	releaseall
 	end
