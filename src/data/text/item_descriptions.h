@@ -1550,6 +1550,10 @@ static const u8 sOldSeaMapDesc[] = _(
     "that shows the way\n"
     "to a certain island.");
 
-static const u8 sLetter1EncodedDesc[] = _(
+static const u8 sLetterEncodedDesc[] = _(
     "A letter that is hard\n"
     "to decypher.");
+
+static const u8 sLetterDecodedDesc[] = _(
+    "A letter that has been\n"
+    "decoded.");

@@ -393,6 +393,9 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 	call PetalburgCity_Gym_EventScript_GiveFacade
 	delay 30
 	msgbox PetalburgCity_Gym_Text_DadHappyAndSad, MSGBOX_DEFAULT
+	giveitem ITEM_LETTER_1_ENCODED
+	setflag FLAG_ITEM_FIRST_LETTER
+	setvar VAR_LILYCOVE_MYSTERY_NPC, 1
 	closemessage
 	delay 40
 	playse SE_DOOR
@@ -1302,7 +1305,12 @@ PetalburgCity_Gym_Text_DadHappyAndSad:
 	.string "DAD: As the GYM LEADER, I can't\n"
 	.string "express how upset I am…\p"
 	.string "But as a father, it makes me both\n"
-	.string "happy and a little sad. It's odd…$"
+	.string "happy and a little sad. It's odd…\p"
+	.string "Oh! I almost forgot!\n"
+	.string "Your friend stopped by just a bit\l"
+	.string "ago. He left this letter for you\l"
+	.string "and said he'd hope to catch you in\l"
+	.string "Lilycove.$"
 
 PetalburgCity_Gym_Text_PleaseComeWithMe:
 	.string "Ah, there you are, {PLAYER}{KUN}!\p"
