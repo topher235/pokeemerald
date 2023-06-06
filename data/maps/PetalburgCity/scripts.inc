@@ -773,6 +773,23 @@ PetalburgCity_EventScript_ReceivedMon::
 	releaseall
 	end
 
+PetalburgCity_EventScript_LittleGirl::
+	lock
+	faceplayer
+	goto_if_set FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_HIDE, PetalburgCity_EventScript_LittleGirlWaitingForFaun
+	goto_if_unset FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_HIDE, PetalburgCity_EventScript_LittleGirlFaunIsBack
+	end
+
+PetalburgCity_EventScript_LittleGirlWaitingForFaun::
+	msgbox PetalburgCity_Text_LittleGirlWaitingForFaun, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PetalburgCity_EventScript_LittleGirlFaunIsBack::
+	msgbox PetalburgCity_Text_LittleGirlFaunIsBack, MSGBOX_DEFAULT
+	releaseall
+	end
+
 PetalburgCity_Text_WhereIsWally:
 	.string "Where has our WALLY gone?\p"
 	.string "We have to leave for VERDANTURF TOWN\n"
@@ -872,3 +889,18 @@ PetalburgCity_Text_SpecialEncounterPostBattle:
 
 PetalburgCity_Text_MonReceived:
 	.string "Received MILOTIC from FAUN.$"
+
+PetalburgCity_Text_LittleGirlWaitingForFaun:
+	.string "I can't wait for Faun to come back\n"
+	.string "home and see how she did in the\l"
+	.string "beauty pageant!\p"
+	.string "You'll need to come back to see\n"
+	.string "her. She's the most beautiful\l"
+	.string "girl I know.$"
+
+PetalburgCity_Text_LittleGirlFaunIsBack:
+	.string "Oh! It's you! Faun has returned\n"
+	.string "and just like I thought, she\l"
+	.string "got 1st place.\p"
+	.string "Go talk to her and maybe she'll\n"
+	.string "give you some beauty tips!$"
