@@ -1,5 +1,6 @@
 .set LOCALID_WOMAN_1, 19
 .set LOCALID_MAN_1, 20
+.set LOCALID_MYSTERY_NPC, 23
 
 LilycoveCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_OnTransition
@@ -411,6 +412,124 @@ LilycoveCity_EventScript_KnowAboutBerryBlender::
 LilycoveCity_EventScript_DontKnowAboutBerryBlender::
 	msgbox LilycoveCity_Text_ExplainBerryBlender, MSGBOX_DEFAULT
 	return
+
+LilycoveCity_EventScript_MysteryNpcCutsceneTop::
+	lockall
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, LilycoveCity_Movement_CameraDiagDownRight
+	waitmovement 0
+	call LilycoveCity_EventScript_MysteryNpcCutscene
+	applymovement OBJ_EVENT_ID_CAMERA, LilycoveCity_Movement_CameraDiagUpLeft
+	waitmovement 0
+	special RemoveCameraObject
+	releaseall
+	end
+
+LilycoveCity_EventScript_MysteryNpcCutsceneMiddle::
+	lockall
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, LilycoveCity_Movement_CameraRight
+	waitmovement 0
+	call LilycoveCity_EventScript_MysteryNpcCutscene
+	applymovement OBJ_EVENT_ID_CAMERA, LilycoveCity_Movement_CameraLeft
+	waitmovement 0
+	special RemoveCameraObject
+	releaseall
+	end
+
+LilycoveCity_EventScript_MysteryNpcCutsceneBottom::
+	lockall
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, LilycoveCity_Movement_CameraDiagUpRight
+	waitmovement OBJ_EVENT_ID_CAMERA
+	call LilycoveCity_EventScript_MysteryNpcCutscene
+	applymovement OBJ_EVENT_ID_CAMERA, LilycoveCity_Movement_CameraDiagDownLeft
+	waitmovement OBJ_EVENT_ID_CAMERA
+	special RemoveCameraObject
+	releaseall
+	end
+
+LilycoveCity_EventScript_MysteryNpcCutscene::
+	applymovement OBJ_EVENT_ID_CAMERA, LilycoveCity_Movement_CameraGoToMysteryNpc
+	waitmovement OBJ_EVENT_ID_CAMERA
+	opendoor 12, 14
+	waitdooranim
+	addobject LOCALID_MYSTERY_NPC
+	delay 15
+	applymovement 23, LilycoveCity_Movement_MysteryNpcDown
+	waitmovement 23
+	closedoor 12, 14
+	waitdooranim
+	applymovement 23, LilycoveCity_Movement_MysteryNpcLeave
+	waitmovement 23
+	removeobject 23
+	applymovement OBJ_EVENT_ID_CAMERA, LilycoveCity_Movement_CameraReturnToPlayer
+	waitmovement OBJ_EVENT_ID_CAMERA
+	setvar VAR_LILYCOVE_MYSTERY_NPC, 0
+	return
+
+LilycoveCity_Movement_CameraDiagDownRight:
+	walk_diag_southeast
+	step_end
+
+LilycoveCity_Movement_CameraDiagUpLeft:
+	walk_diag_northwest
+	step_end
+
+LilycoveCity_Movement_CameraRight:
+	walk_right
+	step_end
+
+LilycoveCity_Movement_CameraLeft:
+	walk_left
+	step_end
+
+LilycoveCity_Movement_CameraDiagUpRight:
+	walk_diag_northeast
+	step_end
+
+LilycoveCity_Movement_CameraDiagDownLeft:
+	walk_diag_southwest
+	step_end
+
+LilycoveCity_Movement_CameraGoToMysteryNpc:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+LilycoveCity_Movement_MysteryNpcDown:
+	walk_down
+	step_end
+
+LilycoveCity_Movement_MysteryNpcLeave:
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+LilycoveCity_Movement_CameraReturnToPlayer:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
 
 LilycoveCity_Text_MayShoppingLetsBattle:
 	.string "MAY: Oh, hey?\n"

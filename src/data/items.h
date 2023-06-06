@@ -4540,16 +4540,198 @@ const struct Item gItems[] =
 
     [ITEM_LETTER_1_ENCODED] =
     {
-        .name = _("LETTER 1"),
+        .name = _("LETTER A"),
         .itemId = ITEM_LETTER_1_ENCODED,
         .price = 0,
-        .description = sLetter1EncodedDesc,
+        .description = sLetterEncodedDesc,
         .importance = 1,
         .registrability = FALSE,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Letter,
-        .secondaryId = LETTER_CHRIS,
+        .secondaryId = LETTER_RIDDLE_ENCODED,
+    },
+
+[   ITEM_LETTER_1_DECODED] =
+    {
+        .name = _("LETTER 1"),
+        .itemId = ITEM_LETTER_1_DECODED,
+        .price = 0,
+        .description = sLetterDecodedDesc,
+        .importance = 1,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Letter,
+        .secondaryId = LETTER_RIDDLE_DECODED,
+    },
+
+    [ITEM_LETTER_2_ENCODED] =
+    {
+        .name = _("LETTER B"),
+        .itemId = ITEM_LETTER_2_ENCODED,
+        .price = 0,
+        .description = sLetterEncodedDesc,
+        .importance = 1,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Letter,
+        .secondaryId = LETTER_MEL_MIKE_ENCODED,
+    },
+
+    [ITEM_LETTER_2_DECODED] =
+    {
+        .name = _("LETTER 2"),
+        .itemId = ITEM_LETTER_2_DECODED,
+        .price = 0,
+        .description = sLetterEncodedDesc,
+        .importance = 1,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Letter,
+        .secondaryId = LETTER_MEL_MIKE_DECODED,
+    },
+
+    [ITEM_LETTER_3_ENCODED] =
+    {
+        .name = _("LETTER C"),
+        .itemId = ITEM_LETTER_3_ENCODED,
+        .price = 0,
+        .description = sLetterEncodedDesc,
+        .importance = 1,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Letter,
+        .secondaryId = LETTER_TY_ALEX_ENCODED,
+    },
+
+    [ITEM_LETTER_3_DECODED] =
+    {
+        .name = _("LETTER 3"),
+        .itemId = ITEM_LETTER_3_DECODED,
+        .price = 0,
+        .description = sLetterEncodedDesc,
+        .importance = 1,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Letter,
+        .secondaryId = LETTER_TY_ALEX_DECODED,
+    },
+
+    [ITEM_LETTER_4_ENCODED] =
+    {
+        .name = _("LETTER D"),
+        .itemId = ITEM_LETTER_4_ENCODED,
+        .price = 0,
+        .description = sLetterEncodedDesc,
+        .importance = 1,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Letter,
+        .secondaryId = LETTER_MARY_ARIC_ENCODED,
+    },
+
+    [ITEM_LETTER_4_DECODED] =
+    {
+        .name = _("LETTER 4"),
+        .itemId = ITEM_LETTER_4_DECODED,
+        .price = 0,
+        .description = sLetterEncodedDesc,
+        .importance = 1,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Letter,
+        .secondaryId = LETTER_MARY_ARIC_DECODED,
+    },
+
+    [ITEM_LETTER_5_ENCODED] =
+    {
+        .name = _("LETTER E"),
+        .itemId = ITEM_LETTER_5_ENCODED,
+        .price = 0,
+        .description = sLetterEncodedDesc,
+        .importance = 1,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Letter,
+        .secondaryId = LETTER_MOM_DAD_ENCODED,
+    },
+
+    [ITEM_LETTER_5_DECODED] =
+    {
+        .name = _("LETTER 5"),
+        .itemId = ITEM_LETTER_5_DECODED,
+        .price = 0,
+        .description = sLetterEncodedDesc,
+        .importance = 1,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Letter,
+        .secondaryId = LETTER_MOM_DAD_DECODED,
+    },
+
+    [ITEM_LETTER_6_ENCODED] =
+    {
+        .name = _("LETTER F"),
+        .itemId = ITEM_LETTER_6_ENCODED,
+        .price = 0,
+        .description = sLetterEncodedDesc,
+        .importance = 1,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Letter,
+        .secondaryId = LETTER_BRO_SIS_ENCODED,
+    },
+
+    [ITEM_LETTER_6_DECODED] =
+    {
+        .name = _("LETTER 6"),
+        .itemId = ITEM_LETTER_6_DECODED,
+        .price = 0,
+        .description = sLetterEncodedDesc,
+        .importance = 1,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Letter,
+        .secondaryId = LETTER_BRO_SIS_DECODED,
+    },
+
+    [ITEM_LETTER_7_ENCODED] =
+    {
+        .name = _("LETTER G"),
+        .itemId = ITEM_LETTER_7_ENCODED,
+        .price = 0,
+        .description = sLetterEncodedDesc,
+        .importance = 1,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Letter,
+        .secondaryId = LETTER_CHRIS_ENCODED,
+    },
+
+    [ITEM_LETTER_7_DECODED] =
+    {
+        .name = _("LETTER 7"),
+        .itemId = ITEM_LETTER_7_DECODED,
+        .price = 0,
+        .description = sLetterEncodedDesc,
+        .importance = 1,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Letter,
+        .secondaryId = LETTER_CHRIS_DECODED,
     },
 
 

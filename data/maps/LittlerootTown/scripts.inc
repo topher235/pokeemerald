@@ -1077,7 +1077,10 @@ LittlerootTown_EventScript_WarpNavelRock::
 	msgbox LittleRoot_Text_WarpNavelRockTwo, MSGBOX_AUTOCLOSE
 	// warp MAP_NAVEL_ROCK_EXTERIOR, 0, 0, 0
 	// setflag FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_HIDE
-	warp MAP_PETALBURG_CITY, 0, 0, 0
+	// warp MAP_PETALBURG_CITY, 0, 0, 0
+	setflag FLAG_LILYCOVE_MYSTERY_NPC_HIDE
+	setvar VAR_LILYCOVE_MYSTERY_NPC, 1
+	warp MAP_LILYCOVE_CITY, 0, 16
 	end
 
 LittleRoot_Text_WarpNavelRockOne:
@@ -1132,5 +1135,17 @@ LittlerootTown_Text_DynamicBattlePostBattle:
 
 LittlerootTown_Text_DynamicBattleCompleted:
 	.string "Thanks for the battle earlier!$"
+
+EventScript_TestPokeNavCall::
+	lock
+	pokenavcall Text_TestPokeNavCall
+	release
+	end
+
+Text_TestPokeNavCall:
+	.string "Here is a pokenav call.\n"
+	.string "got to put in a few\l"
+	.string "more lines.\p"
+	.string "And... last line.$"
 
 // todo: end remove

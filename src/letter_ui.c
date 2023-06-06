@@ -55,12 +55,77 @@ enum WindowIds
     WINDOW_1,
 };
 
-static const u8 *const sLetters[1][2] = 
+static const u8 *const sLetters[14][2] = 
 {
-    [LETTER_CHRIS] = 
+    [LETTER_RIDDLE_ENCODED] = 
     {
         gText_LetterPageOne,
         gText_LetterPageTwo,
+    },
+
+    [LETTER_RIDDLE_DECODED] =
+    {
+
+    },
+
+    [LETTER_MEL_MIKE_ENCODED] =
+    {
+
+    },
+
+    [LETTER_MEL_MIKE_DECODED] =
+    {
+
+    },
+
+    [LETTER_TY_ALEX_ENCODED] =
+    {
+
+    },
+
+    [LETTER_TY_ALEX_DECODED] =
+    {
+
+    },
+
+    [LETTER_MARY_ARIC_ENCODED] =
+    {
+
+    },
+
+    [LETTER_MARY_ARIC_DECODED] =
+    {
+
+    },
+
+    [LETTER_MOM_DAD_ENCODED] =
+    {
+
+    },
+
+    [LETTER_MOM_DAD_DECODED] =
+    {
+
+    },
+
+    [LETTER_BRO_SIS_ENCODED] =
+    {
+
+    },
+
+    [LETTER_BRO_SIS_DECODED] =
+    {
+
+    },
+
+    [LETTER_CHRIS_ENCODED] =
+    {
+
+    },
+
+    [LETTER_CHRIS_DECODED] =
+    {
+
     },
 };
 

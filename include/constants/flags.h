@@ -1224,12 +1224,12 @@
 #define FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_COMPLETE              0x496
 #define FLAG_SPECIAL_ENCOUNTER_MAGMA_HIDEOUT_HIDE                   0x497
 #define FLAG_SPECIAL_ENCOUNTER_MAGMA_HIDEOUT_COMPLETE               0x498
-#define FLAG_GIVE_INCENSE                                           0x499 // Unused Flag
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
+#define FLAG_GIVE_INCENSE                                           0x499
+#define FLAG_ITEM_FIRST_LETTER                                      0x49A
+#define FLAG_LETTER_1_DECODED                                       0x49B
+#define FLAG_LILYCOVE_MYSTERY_NPC_HIDE                              0x49C
+#define FLAG_LETTER_1_GIVEN_TO_BE_DECODED                           0x49D
+#define FLAG_LILYCOVE_HOUSE4_LETTER_HIDE                            0x49E
 #define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
 #define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
 #define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag

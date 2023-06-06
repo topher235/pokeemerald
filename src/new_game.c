@@ -154,6 +154,14 @@ void ResetSpecialEncounters(void)
     FlagSet(FLAG_SPECIAL_ENCOUNTER_MAGMA_HIDEOUT_HIDE);
 }
 
+void ResetMysteryNPC(void)
+{
+    FlagSet(FLAG_LILYCOVE_MYSTERY_NPC_HIDE);
+    FlagSet(FLAG_LETTER_1_DECODED);
+    FlagClear(FLAG_LILYCOVE_HOUSE4_LETTER_HIDE);
+    VarSet(VAR_LILYCOVE_MYSTERY_NPC, 0);
+}
+
 void NewGameInitData(void)
 {
     if (gSaveFileStatus == SAVE_STATUS_EMPTY || gSaveFileStatus == SAVE_STATUS_CORRUPT)
@@ -213,6 +221,7 @@ void NewGameInitData(void)
     ResetTrainerHillResults();
     ResetContestLinkResults();
     ResetSpecialEncounters();
+    ResetMysteryNPC();
     memset(&gSaveBlock2Ptr->follower, 0, sizeof(gSaveBlock2Ptr->follower));
     gSaveBlock2Ptr->expShare = 1;
 }

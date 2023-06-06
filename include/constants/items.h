@@ -477,8 +477,21 @@
 #define ITEM_OLD_SEA_MAP 376
 
 #define ITEM_LETTER_1_ENCODED 377
+#define ITEM_LETTER_1_DECODED 378
+#define ITEM_LETTER_2_ENCODED 379
+#define ITEM_LETTER_2_DECODED 380
+#define ITEM_LETTER_3_ENCODED 381
+#define ITEM_LETTER_3_DECODED 382
+#define ITEM_LETTER_4_ENCODED 383
+#define ITEM_LETTER_4_DECODED 384
+#define ITEM_LETTER_5_ENCODED 385
+#define ITEM_LETTER_5_DECODED 386
+#define ITEM_LETTER_6_ENCODED 387
+#define ITEM_LETTER_6_DECODED 388
+#define ITEM_LETTER_7_ENCODED 389
+#define ITEM_LETTER_7_DECODED 390
 
-#define ITEMS_COUNT 378
+#define ITEMS_COUNT 391
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
 // Its icon is defined at ITEMS_COUNT as the "return to field" arrow
