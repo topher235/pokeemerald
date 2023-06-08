@@ -1,4 +1,5 @@
 .set LOCALID_HO_OH, 1
+.set LOCALID_LETTER3, 2
 
 NavelRock_Top_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, NavelRock_Top_OnTransition
@@ -57,7 +58,7 @@ NavelRock_Top_EventScript_HoOh::
 	applymovement LOCALID_HO_OH, NavelRock_Top_Movement_HoOhApproach
 	waitmovement 0
 	special RemoveCameraObject
-	seteventmon SPECIES_HO_OH, 70
+	seteventmon SPECIES_HO_OH, 50
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
@@ -67,6 +68,7 @@ NavelRock_Top_EventScript_HoOh::
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NavelRock_Top_EventScript_DefeatedHoOh
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NavelRock_Top_EventScript_RanFromHoOh
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NavelRock_Top_EventScript_RanFromHoOh
+	call EventScript_DropLetter3
 	setflag FLAG_CAUGHT_HO_OH
 	releaseall
 	end
@@ -74,12 +76,25 @@ NavelRock_Top_EventScript_HoOh::
 NavelRock_Top_EventScript_DefeatedHoOh::
 	setflag FLAG_DEFEATED_HO_OH
 	setvar VAR_0x8004, SPECIES_HO_OH
+	call EventScript_DropLetter3
 	goto Common_EventScript_LegendaryFlewAway
 	end
 
 NavelRock_Top_EventScript_RanFromHoOh::
 	setvar VAR_0x8004, SPECIES_HO_OH
+	call EventScript_DropLetter3
 	goto Common_EventScript_LegendaryFlewAway
+	end
+
+EventScript_DropLetter3::
+	addobject LOCALID_LETTER3
+	return
+
+EventScript_PickUpLetter3::
+	lock
+	giveitem ITEM_LETTER_3_ENCODED
+	removeobject LOCALID_LETTER3
+	release
 	end
 
 NavelRock_Top_Movement_CameraPanUp:
@@ -110,6 +125,7 @@ NavelRock_Top_Movement_HoOhApproach:
 NavelRock_Top_Movement_HoOhAppear:
 	delay_16
 	delay_16
+	walk_in_place_down
 	walk_in_place_down
 	walk_in_place_down
 	walk_in_place_down

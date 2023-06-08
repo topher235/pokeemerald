@@ -1075,12 +1075,16 @@ LittlerootTown_EventScript_WarpNavelRock::
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_REMOVE_WARP_FADE
 	msgbox LittleRoot_Text_WarpNavelRockTwo, MSGBOX_AUTOCLOSE
-	// warp MAP_NAVEL_ROCK_EXTERIOR, 0, 0, 0
+
+	setflag FLAG_LETTER_3_HIDE
+	setflag FLAG_LETTER_4_HIDE
+	warp MAP_NAVEL_ROCK_EXTERIOR, 0, 0, 0
+	
 	// setflag FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_HIDE
 	// warp MAP_PETALBURG_CITY, 0, 0, 0
-	setflag FLAG_LILYCOVE_MYSTERY_NPC_HIDE
-	setvar VAR_LILYCOVE_MYSTERY_NPC, 1
-	warp MAP_LILYCOVE_CITY, 0, 16
+	// setflag FLAG_LILYCOVE_MYSTERY_NPC_HIDE
+	// setvar VAR_LILYCOVE_MYSTERY_NPC, 1
+	// warp MAP_LILYCOVE_CITY, 0, 16
 	end
 
 LittleRoot_Text_WarpNavelRockOne:
@@ -1139,6 +1143,7 @@ LittlerootTown_Text_DynamicBattleCompleted:
 EventScript_TestPokeNavCall::
 	lock
 	pokenavcall Text_TestPokeNavCall
+	waitmessage
 	release
 	end
 

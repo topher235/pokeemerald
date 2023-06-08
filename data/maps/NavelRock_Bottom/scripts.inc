@@ -1,4 +1,5 @@
 .set LOCALID_LUGIA, 1
+.set LOCALID_LETTER4, 2
 
 NavelRock_Bottom_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, NavelRock_Bottom_OnTransition
@@ -53,7 +54,7 @@ NavelRock_Bottom_EventScript_Lugia::
 	playmoncry SPECIES_LUGIA, CRY_MODE_ENCOUNTER
 	waitmoncry
 	delay 20
-	seteventmon SPECIES_LUGIA, 70
+	seteventmon SPECIES_LUGIA, 50
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
@@ -62,6 +63,7 @@ NavelRock_Bottom_EventScript_Lugia::
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NavelRock_Bottom_EventScript_DefeatedLugia
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NavelRock_Bottom_EventScript_RanFromLugia
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NavelRock_Bottom_EventScript_RanFromLugia
+	call EventScript_DropLetter4
 	setflag FLAG_CAUGHT_LUGIA
 	release
 	end
@@ -69,10 +71,23 @@ NavelRock_Bottom_EventScript_Lugia::
 NavelRock_Bottom_EventScript_DefeatedLugia::
 	setflag FLAG_DEFEATED_LUGIA
 	setvar VAR_0x8004, SPECIES_LUGIA
+	call EventScript_DropLetter4
 	goto Common_EventScript_LegendaryFlewAway
 	end
 
 NavelRock_Bottom_EventScript_RanFromLugia::
 	setvar VAR_0x8004, SPECIES_LUGIA
+	call EventScript_DropLetter4
 	goto Common_EventScript_LegendaryFlewAway
+	end
+
+EventScript_DropLetter4::
+	addobject LOCALID_LETTER4
+	return
+
+EventScript_PickUpLetter4::
+	lock
+	giveitem ITEM_LETTER_4_ENCODED
+	removeobject LOCALID_LETTER4
+	release
 	end
