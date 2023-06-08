@@ -266,7 +266,7 @@
 #define VAR_UNUSED_0x40F7                                0x40F7 // Unused Var
 #define VAR_LILYCOVE_MYSTERY_NPC                         0x40F8
 #define VAR_SOOTOPOLIS_GYM                               0x40F9
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
+#define VAR_GAME_CLEARED_STATE                           0x40FA
 #define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
