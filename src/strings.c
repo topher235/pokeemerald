@@ -1828,5 +1828,6 @@ const u8 gText_ExpShareOff[] = _("Turned off the Exp. Share.\pParty will no long
 
 
 // Letters
+// maximum number of characters per line: ~41
 const u8 gText_LetterPageOne[] = _("Page 1\nLine 2\n Line3\n Line 4\nLine 5\nLine 6");
 const u8 gText_LetterPageTwo[] = _("Page 2\na really really really lo- a really reall");
