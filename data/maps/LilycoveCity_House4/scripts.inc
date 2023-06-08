@@ -19,6 +19,7 @@ EventScript_LetterDecoder::
 
 EventScript_GiveLetterToBeDecoded::
 	msgbox Text_GiveLetter, MSGBOX_DEFAULT
+	removeitem ITEM_LETTER_1_ENCODED
 	setflag FLAG_LETTER_1_GIVEN_TO_BE_DECODED
 	releaseall
 	end
@@ -72,7 +73,7 @@ Text_GiveLetter:
 	.string "Oh, you must be {PLAYER}!\p"
 	.string "He was waiting for you and you\l"
 	.string "just missed him.\p"
-	.string "If you want, I can copy that\n"
+	.string "If you want, I can take that\n"
 	.string "letter and decypher it for you.\p"
 	.string "I'll give you a call when it's ready.$"
 
