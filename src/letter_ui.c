@@ -45,7 +45,6 @@ struct LetterResources
 {
     MainCallback savedCallback;     // determines callback to run when we exit. e.g. where do we want to go after closing the menu
     u8 gfxLoadState;
-    u8* title;
     u8 pageNumber;
     u8 letter;
 };
@@ -172,18 +171,18 @@ static const struct WindowTemplate sMenuWindowTemplates[] =
     [WINDOW_1] = 
     {
         .bg = 0,            // which bg to print text on
-        .tilemapLeft = 4,   // position from left (per 8 pixels)
-        .tilemapTop = 3,    // position from top (per 8 pixels)
-        .width = 15,        // width (per 8 pixels) -- how big the box is before text gets cut off
-        .height = 3,        // height (per 8 pixels) -- ^^
+        .tilemapLeft = 2,   // position from left (per 8 pixels)
+        .tilemapTop = 4,    // position from top (per 8 pixels)
+        .width = 25,        // width (per 8 pixels) -- how big the box is before text gets cut off
+        .height = 15,        // height (per 8 pixels) -- ^^
         .paletteNum = 15,   // palette index to use for text
         .baseBlock = 1,     // tile start in VRAM
     },
 };
 
-static const u32 sMenuTiles[] = INCBIN_U32("graphics/ui_menu/tiles.4bpp.lz");
-static const u32 sMenuTilemap[] = INCBIN_U32("graphics/ui_menu/tilemap.bin.lz");
-static const u16 sMenuPalette[] = INCBIN_U16("graphics/ui_menu/palette.gbapal");
+static const u32 sMenuTiles[] = INCBIN_U32("graphics/mail/dream/tiles.4bpp.lz");
+static const u32 sMenuTilemap[] = INCBIN_U32("graphics/mail/dream/map.bin.lz");
+static const u16 sMenuPalette[] = INCBIN_U16("graphics/mail/dream/palette.gbapal");
 
 enum Colors
 {
@@ -201,18 +200,6 @@ static const u8 sMenuWindowFontColors[][3] =
 };
 
 //==========FUNCTIONS==========//
-// UI loader template
-// void Task_OpenUI(u8 taskId)
-// {
-//     s16 *data = gTasks[taskId].data;
-//     if (!gPaletteFade.active)
-//     {
-//         CleanupOverworldWindowsAndTilemaps();
-//         LetterUI_Init(CB2_ReturnToFieldWithOpenMenu);
-//         DestroyTask(taskId);
-//     }
-// }
-
 
 // This is our main initialization function if you want to call the menu from elsewhere
 void LetterUI_Init(MainCallback callback, u8 letter)
@@ -226,9 +213,8 @@ void LetterUI_Init(MainCallback callback, u8 letter)
     // initialize stuff
     sLetterDataPtr->gfxLoadState = 0;
     sLetterDataPtr->savedCallback = callback;
-    // sLetterDataPtr->title = sText_Title;
     sLetterDataPtr->pageNumber = 0;
-    sLetterDataPtr->letter = 0;
+    sLetterDataPtr->letter = letter;
 
     SetMainCallback2(Menu_RunSetup);
 }
