@@ -310,6 +310,27 @@ LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC::
 	releaseall
 	end
 
+MaysHouse_2F_EventScript_ReceivePokenavCall::
+	lockall
+	pokenavcall MaysHouse_2F_Text_ReceivePokenavCall
+	waitmessage
+	setvar VAR_GAME_CLEARED_STATE, 2
+	releaseall
+	end
+
+MaysHouse_2F_Text_ReceivePokenavCall:
+	.string "Heya {PLAYER}! It's me, LEON, from\n"
+	.string "Lilycove.\p"
+	.string "Congratulations on becoming the\n"
+	.string "POKéMON champion!\p"
+	.string "Our pal just left my house headed to\n"
+	.string "ROUTE 119.\l"
+	.string "He said he had more letters for you.\p"
+	.string "Don't worry though. While we were\n"
+	.string "hanging out, I took a look at them.\l"
+	.string "You should have no trouble reading\l"
+	.string "them.$"
+
 RivalsHouse_2F_Text_MayWhoAreYou:
 	.string "Huh?\n"
 	.string "Who… Who are you?\p"

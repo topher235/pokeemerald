@@ -163,6 +163,7 @@ void ResetMysteryNPC(void)
     FlagClear(FLAG_LILYCOVE_HOUSE4_LETTER_HIDE);
     VarSet(VAR_LILYCOVE_MYSTERY_NPC, 0);
     VarSet(VAR_SOOTOPOLIS_GYM, 0);
+    VarSet(VAR_GAME_CLEARED_STATE, 0);
 }
 
 void NewGameInitData(void)
