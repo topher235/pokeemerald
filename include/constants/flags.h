@@ -1229,8 +1229,8 @@
 #define FLAG_LILYCOVE_MYSTERY_NPC_HIDE                              0x49C
 #define FLAG_LETTER_1_GIVEN_TO_BE_DECODED                           0x49D
 #define FLAG_LILYCOVE_HOUSE4_LETTER_HIDE                            0x49E
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
+#define FLAG_LETTER_3_HIDE                                          0x49F
+#define FLAG_LETTER_4_HIDE                                          0x4A0
 #define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
 #define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
 #define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
