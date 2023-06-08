@@ -405,19 +405,19 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     // Letters
     // encoded icon: "letter"
     [ITEM_LETTER_1_ENCODED] = {gItemIcon_DreamMail, gItemIconPalette_DreamMail},
-    [ITEM_LETTER_1_DECODED] = {gItemIcon_DreamMail, gItemIconPalette_DreamMail},
+    [ITEM_LETTER_1_DECODED] = {gItemIcon_RetroMail, gItemIconPalette_RetroMail},
     [ITEM_LETTER_2_ENCODED] = {gItemIcon_DreamMail, gItemIconPalette_DreamMail},
-    [ITEM_LETTER_2_DECODED] = {gItemIcon_DreamMail, gItemIconPalette_DreamMail},
+    [ITEM_LETTER_2_DECODED] = {gItemIcon_RetroMail, gItemIconPalette_RetroMail},
     [ITEM_LETTER_3_ENCODED] = {gItemIcon_DreamMail, gItemIconPalette_DreamMail},
-    [ITEM_LETTER_3_DECODED] = {gItemIcon_DreamMail, gItemIconPalette_DreamMail},
+    [ITEM_LETTER_3_DECODED] = {gItemIcon_RetroMail, gItemIconPalette_RetroMail},
     [ITEM_LETTER_4_ENCODED] = {gItemIcon_DreamMail, gItemIconPalette_DreamMail},
-    [ITEM_LETTER_4_DECODED] = {gItemIcon_DreamMail, gItemIconPalette_DreamMail},
+    [ITEM_LETTER_4_DECODED] = {gItemIcon_RetroMail, gItemIconPalette_RetroMail},
     [ITEM_LETTER_5_ENCODED] = {gItemIcon_DreamMail, gItemIconPalette_DreamMail},
-    [ITEM_LETTER_5_DECODED] = {gItemIcon_DreamMail, gItemIconPalette_DreamMail},
+    [ITEM_LETTER_5_DECODED] = {gItemIcon_RetroMail, gItemIconPalette_RetroMail},
     [ITEM_LETTER_6_ENCODED] = {gItemIcon_DreamMail, gItemIconPalette_DreamMail},
-    [ITEM_LETTER_6_DECODED] = {gItemIcon_DreamMail, gItemIconPalette_DreamMail},
+    [ITEM_LETTER_6_DECODED] = {gItemIcon_RetroMail, gItemIconPalette_RetroMail},
     [ITEM_LETTER_7_ENCODED] = {gItemIcon_DreamMail, gItemIconPalette_DreamMail},
-    [ITEM_LETTER_7_DECODED] = {gItemIcon_DreamMail, gItemIconPalette_DreamMail},
+    [ITEM_LETTER_7_DECODED] = {gItemIcon_RetroMail, gItemIconPalette_RetroMail},
     
     // decoded options:
     // bead_mail
