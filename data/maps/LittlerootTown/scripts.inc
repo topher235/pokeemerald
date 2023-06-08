@@ -1072,14 +1072,18 @@ LittlerootTown_EventScript_WarpNavelRock::
 	lock
 	faceplayer
 	msgbox LittleRoot_Text_WarpNavelRockOne, MSGBOX_AUTOCLOSE
-	// fadescreen FADE_TO_BLACK
-	// setflag FLAG_REMOVE_WARP_FADE
-	// msgbox LittleRoot_Text_WarpNavelRockTwo, MSGBOX_AUTOCLOSE
+	
+	fadescreen FADE_TO_BLACK
+	setflag FLAG_REMOVE_WARP_FADE
+	msgbox LittleRoot_Text_WarpNavelRockTwo, MSGBOX_AUTOCLOSE
 
 	// setflag FLAG_LETTER_3_HIDE
 	// setflag FLAG_LETTER_4_HIDE
 	// warp MAP_NAVEL_ROCK_EXTERIOR, 0, 0, 0
-	giveitem ITEM_LETTER_3_ENCODED
+	// giveitem ITEM_LETTER_3_ENCODED
+	// giveitem ITEM_LETTER_4_ENCODED
+	// setvar VAR_SOOTOPOLIS_GYM, 1
+	warp MAP_SOOTOPOLIS_CITY_GYM_1F, 0, 0, 0
 
 	// setflag FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_HIDE
 	// warp MAP_PETALBURG_CITY, 0, 0, 0

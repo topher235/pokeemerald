@@ -1,3 +1,5 @@
+.set LOCALID_GYM_GUIDE, 2
+
 SootopolisCity_Gym_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SootopolisCity_Gym_1F_OnFrame
 	map_script MAP_SCRIPT_ON_RESUME, SootopolisCity_Gym_1F_OnResume
@@ -100,6 +102,7 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 	setflag FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN
 	setflag FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE
 	setvar VAR_SOOTOPOLIS_CITY_STATE, 6
+	setvar VAR_SOOTOPOLIS_GYM, 1
 	clearflag FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1
 	setvar VAR_0x8008, 8
 	call Common_EventScript_SetGymTrainers
@@ -174,6 +177,64 @@ SootopolisCity_Gym_1F_EventScript_GymStatue::
 	msgbox SootopolisCity_Gym_1F_Text_GymStatue, MSGBOX_DEFAULT
 	releaseall
 	end
+
+EventScript_GiveLetter5Cutscene::
+	lockall
+	applymovement LOCALID_GYM_GUIDE, Movement_GymGuideApproachPlayer
+	waitmovement 0
+	checkitem ITEM_LETTER_3_ENCODED
+	goto_if_eq VAR_RESULT, FALSE, EventScript_RecommendSolvingRiddle
+	checkitem ITEM_LETTER_4_ENCODED
+	goto_if_eq VAR_RESULT, FALSE, EventScript_RecommendSolvingRiddle
+	msgbox Text_GiveLetter5, MSGBOX_DEFAULT
+	giveitem ITEM_LETTER_5_ENCODED
+	call EventScript_GymGuideReturnToPost
+	end
+
+EventScript_GymGuideReturnToPost::
+	applymovement LOCALID_GYM_GUIDE, Movement_GymGuideReturnToPost
+	waitmovement 0
+	setvar VAR_SOOTOPOLIS_GYM, 0
+	releaseall
+	end
+
+EventScript_RecommendSolvingRiddle::
+	msgbox Text_RecommendSolvingRiddleAndGiveLetter5, MSGBOX_DEFAULT
+	giveitem ITEM_LETTER_5_ENCODED
+	call EventScript_GymGuideReturnToPost
+	end
+
+Movement_GymGuideApproachPlayer:
+	walk_right
+	walk_up
+	walk_up
+	step_end
+
+Movement_GymGuideReturnToPost:
+	walk_down
+	walk_down
+	walk_left
+	walk_in_place_down
+	step_end
+
+Text_GiveLetter5:
+	.string "Yow! You've even beaten JUAN!\p"
+	.string "While you were battling, a man\n"
+	.string "stopped by and told me to give this\l"
+	.string "to you and say, 'I'm busy preparing\l"
+	.string "a few things, but I will see you\l"
+	.string "soon. Keep training.'$"
+
+Text_RecommendSolvingRiddleAndGiveLetter5:
+	.string "Yow! You've even beaten JUAN!\p"
+	.string "While you were battling, a man\n"
+	.string "stopped by and told me to give this\l"
+	.string "to you and say, 'It would serve you\l"
+	.string "well to think over my letters\l"
+	.string "before challenging the Elite 4. I'm\l"
+	.string "busy preparing a few things, but\l"
+	.string "I will see you soon.\l"
+	.string "Keep training.$"
 
 SootopolisCity_Gym_1F_Text_GymGuideAdvice:
 	.string "Yo! How's it going, CHAMPION-\n"
