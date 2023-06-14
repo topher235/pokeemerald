@@ -1085,6 +1085,7 @@ LittlerootTown_EventScript_WarpNavelRock::
 	// setvar VAR_SOOTOPOLIS_GYM, 1
 	// warp MAP_SOOTOPOLIS_CITY_GYM_1F, 0, 0, 0
 	warp MAP_EVER_GRANDE_CITY_HALL_OF_FAME, 7, 16
+	// warp MAP_ROUTE_119, 22, 34
 
 	// setflag FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_HIDE
 	// warp MAP_PETALBURG_CITY, 0, 0, 0

@@ -490,8 +490,9 @@
 #define ITEM_LETTER_6_DECODED 388
 #define ITEM_LETTER_7_ENCODED 389
 #define ITEM_LETTER_7_DECODED 390
+#define ITEM_DIAMOND_RING 391
 
-#define ITEMS_COUNT 391
+#define ITEMS_COUNT 392
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
 // Its icon is defined at ITEMS_COUNT as the "return to field" arrow

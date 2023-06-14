@@ -161,9 +161,19 @@ void ResetMysteryNPC(void)
     FlagSet(FLAG_LETTER_3_HIDE);
     FlagSet(FLAG_LETTER_4_HIDE);
     FlagClear(FLAG_LILYCOVE_HOUSE4_LETTER_HIDE);
+    FlagSet(FLAG_PROPOSAL_HIDE);
+    FlagClear(FLAG_READ_LETTER_1);
+    FlagClear(FLAG_READ_LETTER_2);
+    FlagClear(FLAG_READ_LETTER_3);
+    FlagClear(FLAG_READ_LETTER_4);
+    FlagClear(FLAG_READ_LETTER_5);
+    FlagClear(FLAG_READ_LETTER_6);
+    FlagClear(FLAG_READ_LETTER_7);
     VarSet(VAR_LILYCOVE_MYSTERY_NPC, 0);
     VarSet(VAR_SOOTOPOLIS_GYM, 0);
     VarSet(VAR_GAME_CLEARED_STATE, 0);
+    VarSet(VAR_PROPOSAL_STATE, 0);
+    VarSet(VAR_LETTERS_READ, 0);
 }
 
 void NewGameInitData(void)
