@@ -5069,4 +5069,8 @@ extern const u8 gMailTilemap_Retro[];
 extern const u8 gMonMarkingsMenu_Gfx[];
 extern const u16 gMonMarkingsMenu_Pal[];
 
+// Custom Items
+extern const u32 gItemIcon_Redbull[];
+extern const u32 gItemIconPalette_Redbull[];
+
 #endif //GUARD_GRAPHICS_H
