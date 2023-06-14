@@ -562,6 +562,7 @@ Route119_EventScript_ChrisPropose::
 	playfanfare MUS_CONTEST_WINNER
 	giveitem ITEM_DIAMOND_RING, 1
 	// confetti animation?
+	special DoDomeConfetti
 	setvar VAR_PROPOSAL_STATE, 4
 	release
 	end
