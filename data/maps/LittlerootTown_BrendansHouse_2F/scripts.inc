@@ -283,6 +283,7 @@ BrendansHouse_2F_EventScript_ReceivePokenavCall::
 DebugScript::
 	lock
 	giveitem ITEM_DIAMOND_RING, 1
+	giveitem ITEM_PP_UP, 1
 	special DoDomeConfetti
 	release
 	end
