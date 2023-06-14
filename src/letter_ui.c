@@ -219,8 +219,38 @@ void LetterUI_Init(MainCallback callback, u8 letter)
     SetMainCallback2(Menu_RunSetup);
 }
 
+static void SetLettersReadVar(u16 flag)
+{
+    u16 lettersRead;
+    if (!FlagGet(flag))
+    {
+        FlagSet(flag);
+        lettersRead = VarGet(VAR_LETTERS_READ);
+        VarSet(VAR_LETTERS_READ, lettersRead++);
+    }
+}
+
 static void Menu_RunSetup(void)
 {
+    // track which letters are read
+    switch (sLetterDataPtr->letter)
+    {
+        case LETTER_RIDDLE_DECODED:
+            SetLettersReadVar(FLAG_READ_LETTER_1);
+        case LETTER_MEL_MIKE_DECODED:
+            SetLettersReadVar(FLAG_READ_LETTER_2);
+        case LETTER_TY_ALEX_DECODED:
+            SetLettersReadVar(FLAG_READ_LETTER_3);
+        case LETTER_MARY_ARIC_DECODED:
+            SetLettersReadVar(FLAG_READ_LETTER_4);
+        case LETTER_MOM_DAD_DECODED:
+            SetLettersReadVar(FLAG_READ_LETTER_5);
+        case LETTER_BRO_SIS_DECODED:
+            SetLettersReadVar(FLAG_READ_LETTER_6);
+        case LETTER_CHRIS_DECODED:
+            SetLettersReadVar(FLAG_READ_LETTER_7);
+    }
+
     while (1)
     {
         if (Menu_DoGfxSetup() == TRUE)

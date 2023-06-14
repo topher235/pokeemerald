@@ -1232,14 +1232,14 @@
 #define FLAG_LILYCOVE_HOUSE4_LETTER_HIDE                            0x49E
 #define FLAG_LETTER_3_HIDE                                          0x49F
 #define FLAG_LETTER_4_HIDE                                          0x4A0
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
-#define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
-#define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
-#define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
-#define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
-#define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
+#define FLAG_PROPOSAL_HIDE                                          0x4A1
+#define FLAG_READ_LETTER_1                                          0x4A2
+#define FLAG_READ_LETTER_2                                          0x4A3
+#define FLAG_READ_LETTER_3                                          0x4A4
+#define FLAG_READ_LETTER_4                                          0x4A5
+#define FLAG_READ_LETTER_5                                          0x4A6
+#define FLAG_READ_LETTER_6                                          0x4A7
+#define FLAG_READ_LETTER_7                                          0x4A8
 #define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
 #define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
 #define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag

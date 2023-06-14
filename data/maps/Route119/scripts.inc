@@ -1,6 +1,7 @@
 .set LOCALID_RIVAL, 16
 .set LOCALID_RIVAL_ON_BIKE, 25
 .set LOCALID_SCOTT, 43
+.set LOCALID_CHRIS, 44
 
 Route119_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, Route119_OnResume
@@ -478,6 +479,154 @@ Route119_EventScript_ScottWonAtFortreeGymCall::
 	addvar VAR_SCOTT_STATE, 1
 	releaseall
 	end
+
+Route119_EventScript_ProposalCutsceneBottom::
+	lockall
+	addobject LOCALID_CHRIS
+	delay 15
+	applymovement LOCALID_CHRIS, Route119_Movement_MoveDown
+	waitmovement 0
+	applymovement LOCALID_CHRIS, Route119_Movement_ChrisApproachPlayer
+	goto Route119_EventScript_ProposalState1
+	end
+
+Route119_EventScript_ProposalCutsceneTop::
+	lockall
+	addobject LOCALID_CHRIS
+	delay 15
+	applymovement LOCALID_CHRIS, Route119_Movement_ChrisApproachPlayer
+	goto Route119_EventScript_ProposalState1
+	end
+
+Route119_EventScript_ChrisApproachPlayer::
+	applymovement LOCALID_CHRIS, Route119_Movement_ChrisApproachPlayer
+	waitmovement 0
+	return
+
+Route119_EventScript_ChrisIdle::
+	lock
+	faceplayer
+	switch VAR_PROPOSAL_STATE
+	case 2, Route119_EventScript_ProposalState2
+	case 3, Route119_EventScript_ProposalState3
+	case 4, Route119_EventScript_ProposalState4
+	end
+
+Route119_EventScript_ProposalState1::
+	clearflag FLAG_PROPOSAL_HIDE
+	msgbox Route119_Text_ChrisExplainLetters, MSGBOX_DEFAULT
+	removeitem ITEM_LETTER_1_ENCODED
+	removeitem ITEM_LETTER_2_ENCODED
+	removeitem ITEM_LETTER_3_ENCODED
+	removeitem ITEM_LETTER_4_ENCODED
+	removeitem ITEM_LETTER_5_ENCODED
+	removeitem ITEM_LETTER_6_ENCODED
+	giveitem ITEM_LETTER_1_DECODED, 1
+	giveitem ITEM_LETTER_2_DECODED, 1
+	giveitem ITEM_LETTER_3_DECODED, 1
+	giveitem ITEM_LETTER_4_DECODED, 1
+	giveitem ITEM_LETTER_5_DECODED, 1
+	giveitem ITEM_LETTER_6_DECODED, 1
+	setvar VAR_PROPOSAL_STATE, 2
+	releaseall
+	end
+
+Route119_EventScript_ProposalState2::
+	goto_if_eq VAR_LETTERS_READ, 6, Route119_EventScript_ChrisGiveFinalLetter
+	msgbox Route119_Text_ChrisUntilLettersAreRead, MSGBOX_DEFAULT
+	release
+	end
+
+Route119_EventScript_ProposalState3::
+	goto_if_eq VAR_LETTERS_READ, 7, Route119_EventScript_ChrisPropose
+	msgbox Route119_Text_ChrisWaitLastLetter, MSGBOX_DEFAULT
+	release
+	end
+
+Route119_EventScript_ProposalState4::
+	msgbox Route119_Text_ChrisPostProposal, MSGBOX_DEFAULT
+	release
+	end
+
+Route119_EventScript_ChrisGiveFinalLetter::
+	msgbox Route119_Text_ChrisGiveFinalLetter, MSGBOX_DEFAULT
+	giveitem ITEM_LETTER_7_DECODED, 1
+	setvar VAR_PROPOSAL_STATE, 3
+	release
+	end
+
+Route119_EventScript_ChrisPropose::
+	msgbox Route119_Text_ChrisPropose, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route119_EventScript_ChrisAreYouSure
+	// TODO: change fanfare
+	playfanfare MUS_CONTEST_WINNER
+	giveitem ITEM_DIAMOND_RING, 1
+	// confetti animation?
+	setvar VAR_PROPOSAL_STATE, 4
+	release
+	end
+
+Route119_EventScript_ChrisAreYouSure::
+	msgbox Route119_Text_ChrisAreYouSure, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, Route119_EventScript_ChrisAreYouSure
+	goto Route119_EventScript_ChrisPropose
+	end
+
+Route119_Movement_MoveDown:
+	walk_down
+	step_end
+
+Route119_Movement_ChrisApproachPlayer:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+Route119_Movement_FaceRight:
+	walk_in_place_right
+	step_end
+
+Route119_Text_ChrisExplainLetters:
+	.string "Thanks for meeting up with me!\n"
+	.string "I'm glad we finally have the\l"
+	.string "chance to see each other again.\p"
+	.string "I've been very busy trying to get\n"
+	.string "everything in place.\l"
+	.string "I apologize for all the hard to\l"
+	.string "read letters.\p"
+	.string "In my haste, I was trying to write\l"
+	.string "things down very quickly.\l"
+	.string "Unfortunately, it all turned out\l"
+	.string "to be chicken scratch.\p"
+	.string "I can take those scraps off of\n"
+	.string "your hands and give you these\l"
+	.string "MUCH easier to read letters.$"
+
+Route119_Text_ChrisUntilLettersAreRead:
+	.string "Let me know when you've had a\n"
+	.string "chance to read those letters.$"
+
+Route119_Text_ChrisGiveFinalLetter:
+	.string "Ah! I almost forgot!\n"
+	.string "There's just one more letter.\p"
+	.string "Here you go!$"
+
+Route119_Text_ChrisWaitLastLetter:
+	.string "Let me know when you've read that\n"
+	.string "last letter.$"
+
+Route119_Text_ChrisPropose:
+	.string "{PLAYER}, will you marry me?$"
+
+Route119_Text_ChrisAreYouSure:
+	.string "Are you sure?$"
+
+Route119_Text_ChrisPostProposal:
+	.string "CHRIS: I'm so happy to spend\n"
+	.string "forever with you, {PLAYER}.$"
 
 Route119_Text_MayIntro:
 	.string "MAY: {PLAYER}{KUN}!\n"

@@ -276,8 +276,14 @@ BrendansHouse_2F_EventScript_ReceivePokenavCall::
 	lockall
 	pokenavcall BrendansHouse_2F_Text_ReceivePokenavCall
 	waitmessage
-	setvar VAR_GAME_CLEARED_STATE, 2
+	setvar VAR_PROPOSAL_STATE, 1
 	releaseall
+	end
+
+DebugScript::
+	lock
+	giveitem ITEM_DIAMOND_RING, 1
+	release
 	end
 
 BrendansHouse_2F_Text_ReceivePokenavCall:

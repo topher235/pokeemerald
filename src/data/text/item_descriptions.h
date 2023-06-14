@@ -1557,3 +1557,7 @@ static const u8 sLetterEncodedDesc[] = _(
 static const u8 sLetterDecodedDesc[] = _(
     "A letter that has been\n"
     "decyphered.");
+
+static const u8 sDiamondRingDesc[] = _(
+    "A bright and shining\n"
+    "diamond ring.");

@@ -4734,5 +4734,18 @@ const struct Item gItems[] =
         .secondaryId = LETTER_CHRIS_DECODED,
     },
 
+    [ITEM_DIAMOND_RING] =
+    {
+        .name = _("DIAMOND RING"),
+        .itemId = ITEM_DIAMOND_RING,
+        .price = 0,
+        .description = sDiamondRingDesc,
+        .importance = 1,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    }
+
 
 };

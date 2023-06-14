@@ -418,6 +418,9 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_LETTER_6_DECODED] = {gItemIcon_RetroMail, gItemIconPalette_RetroMail},
     [ITEM_LETTER_7_ENCODED] = {gItemIcon_DreamMail, gItemIconPalette_DreamMail},
     [ITEM_LETTER_7_DECODED] = {gItemIcon_RetroMail, gItemIconPalette_RetroMail},
+
+    // Diamond Ring
+    [ITEM_DIAMOND_RING] = {gItemIcon_Gem, gItemIconPalette_Ruby},
     
     // decoded options:
     // bead_mail
