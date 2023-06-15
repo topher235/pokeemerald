@@ -2,6 +2,7 @@
 .set LOCALID_RIVAL_ON_BIKE, 25
 .set LOCALID_SCOTT, 43
 .set LOCALID_CHRIS, 44
+.set LOCALID_CHRIS_CUTSCENE, 45
 
 Route119_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, Route119_OnResume
@@ -481,20 +482,32 @@ Route119_EventScript_ScottWonAtFortreeGymCall::
 	end
 
 Route119_EventScript_ProposalCutsceneBottom::
-	lockall
+	lock
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	addobject LOCALID_CHRIS
+	setobjectxy LOCALID_CHRIS, 33, 84
 	delay 15
-	applymovement LOCALID_CHRIS, Route119_Movement_MoveDown
+	call Route119_EventScript_ChrisApproachPlayer
 	waitmovement 0
-	applymovement LOCALID_CHRIS, Route119_Movement_ChrisApproachPlayer
+	applymovement LOCALID_CHRIS, Route119_Movement_FaceDown
+	applymovement OBJ_EVENT_ID_PLAYER, Route119_Movement_FaceUp
+	waitmovement 0
 	goto Route119_EventScript_ProposalState1
 	end
 
 Route119_EventScript_ProposalCutsceneTop::
-	lockall
+	lock
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	addobject LOCALID_CHRIS
+	setobjectxy LOCALID_CHRIS, 33, 84
 	delay 15
-	applymovement LOCALID_CHRIS, Route119_Movement_ChrisApproachPlayer
+	applymovement LOCALID_CHRIS, Route119_Movement_MoveDown
+	waitmovement 0
+	call Route119_EventScript_ChrisApproachPlayer
+	waitmovement 0
+	applymovement LOCALID_CHRIS, Route119_Movement_FaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, Route119_Movement_FaceDown
+	waitmovement 0
 	goto Route119_EventScript_ProposalState1
 	end
 
@@ -521,14 +534,15 @@ Route119_EventScript_ProposalState1::
 	removeitem ITEM_LETTER_4_ENCODED
 	removeitem ITEM_LETTER_5_ENCODED
 	removeitem ITEM_LETTER_6_ENCODED
-	giveitem ITEM_LETTER_1_DECODED, 1
-	giveitem ITEM_LETTER_2_DECODED, 1
-	giveitem ITEM_LETTER_3_DECODED, 1
-	giveitem ITEM_LETTER_4_DECODED, 1
-	giveitem ITEM_LETTER_5_DECODED, 1
-	giveitem ITEM_LETTER_6_DECODED, 1
+	additem ITEM_LETTER_1_DECODED, 1
+	additem ITEM_LETTER_2_DECODED, 1
+	additem ITEM_LETTER_3_DECODED, 1
+	additem ITEM_LETTER_4_DECODED, 1
+	additem ITEM_LETTER_5_DECODED, 1
+	additem ITEM_LETTER_6_DECODED, 1
+	msgbox Route119_Text_ReceivedLettersFromChris, MSGBOX_DEFAULT
 	setvar VAR_PROPOSAL_STATE, 2
-	releaseall
+	release
 	end
 
 Route119_EventScript_ProposalState2::
@@ -561,7 +575,6 @@ Route119_EventScript_ChrisPropose::
 	// TODO: change fanfare
 	playfanfare MUS_CONTEST_WINNER
 	giveitem ITEM_DIAMOND_RING, 1
-	// confetti animation?
 	special DoDomeConfetti
 	setvar VAR_PROPOSAL_STATE, 4
 	release
@@ -577,7 +590,16 @@ Route119_Movement_MoveDown:
 	walk_down
 	step_end
 
+Route119_Movement_MoveUp:
+	walk_up
+	step_end
+
 Route119_Movement_ChrisApproachPlayer:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	walk_left
 	walk_left
 	walk_left
@@ -588,6 +610,14 @@ Route119_Movement_ChrisApproachPlayer:
 
 Route119_Movement_FaceRight:
 	walk_in_place_right
+	step_end
+
+Route119_Movement_FaceUp:
+	walk_in_place_up
+	step_end
+
+Route119_Movement_FaceDown:
+	walk_in_place_down
 	step_end
 
 Route119_Text_ChrisExplainLetters:
@@ -605,6 +635,9 @@ Route119_Text_ChrisExplainLetters:
 	.string "I can take those scraps off of\n"
 	.string "your hands and give you these\l"
 	.string "MUCH easier to read letters.$"
+
+Route119_Text_ReceivedLettersFromChris:
+	.string "Received LETTERS.$"
 
 Route119_Text_ChrisUntilLettersAreRead:
 	.string "Let me know when you've had a\n"

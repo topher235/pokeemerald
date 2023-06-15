@@ -9,7 +9,7 @@ LilycoveCity_House4_EventScript_Man1::
 	checkitem ITEM_LETTER_1_ENCODED, 1
 	goto_if_eq VAR_RESULT, 1, EventScript_LetterDecoder
 	msgbox Text_Greeting, MSGBOX_DEFAULT
-	releaseall
+	release
 	end
 
 EventScript_LetterDecoder::
@@ -21,7 +21,7 @@ EventScript_GiveLetterToBeDecoded::
 	msgbox Text_GiveLetter, MSGBOX_DEFAULT
 	removeitem ITEM_LETTER_1_ENCODED
 	setflag FLAG_LETTER_1_GIVEN_TO_BE_DECODED
-	releaseall
+	release
 	end
 
 EventScript_Letter1Given::
@@ -31,7 +31,7 @@ EventScript_Letter1Given::
 
 EventScript_LetterNotReady::
 	msgbox Text_LetterNotReady, MSGBOX_DEFAULT
-	releaseall
+	release
 	end
 
 EventScript_Letter1Decoded::
@@ -39,12 +39,12 @@ EventScript_Letter1Decoded::
 	goto_if_eq VAR_RESULT, 1, EventScript_LetterAlreadyGiven
 	msgbox Text_ExplainLetter, MSGBOX_DEFAULT
 	giveitem ITEM_LETTER_1_DECODED, 1
-	releaseall
+	release
 	end
 
 EventScript_LetterAlreadyGiven::
 	msgbox Text_LetterAlreadyGiven, MSGBOX_DEFAULT
-	releaseall
+	release
 	end
 
 EventScript_PickUpLetter2::
