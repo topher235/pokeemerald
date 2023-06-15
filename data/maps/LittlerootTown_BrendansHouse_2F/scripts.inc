@@ -280,14 +280,6 @@ BrendansHouse_2F_EventScript_ReceivePokenavCall::
 	releaseall
 	end
 
-DebugScript::
-	lock
-	giveitem ITEM_DIAMOND_RING, 1
-	giveitem ITEM_PP_UP, 1
-	special DoDomeConfetti
-	release
-	end
-
 BrendansHouse_2F_Text_ReceivePokenavCall:
 	.string "Heya {PLAYER}! It's me, LEON, from\n"
 	.string "Lilycove.\p"

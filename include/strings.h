@@ -3036,5 +3036,18 @@ extern const u8 gText_ExpShareOff[];
 extern const u8 gText_Letter[];
 extern const u8 gText_LetterPageOne[];
 extern const u8 gText_LetterPageTwo[];
+extern const u8 gText_LetterRiddleDecodedPageOne[];
+
+extern const u8 gText_LetterMelMikeDecodedPageOne[];
+
+extern const u8 gText_LetterTyAlexDecodedPageOne[];
+
+extern const u8 gText_LetterMaryAricDecodedPageOne[];
+
+extern const u8 gText_LetterMomDadDecodedPageOne[];
+
+extern const u8 gText_LetterBroSisDecodedPageOne[];
+
+extern const u8 gText_LetterChrisDecodedPageOne[];
 
 #endif // GUARD_STRINGS_H

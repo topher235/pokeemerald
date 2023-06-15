@@ -64,7 +64,7 @@ static const u8 *const sLetters[14][2] =
 
     [LETTER_RIDDLE_DECODED] =
     {
-
+        gText_LetterRiddleDecodedPageOne,
     },
 
     [LETTER_MEL_MIKE_ENCODED] =
@@ -74,7 +74,7 @@ static const u8 *const sLetters[14][2] =
 
     [LETTER_MEL_MIKE_DECODED] =
     {
-
+        gText_LetterMelMikeDecodedPageOne,
     },
 
     [LETTER_TY_ALEX_ENCODED] =
@@ -84,7 +84,7 @@ static const u8 *const sLetters[14][2] =
 
     [LETTER_TY_ALEX_DECODED] =
     {
-
+        gText_LetterTyAlexDecodedPageOne,
     },
 
     [LETTER_MARY_ARIC_ENCODED] =
@@ -94,7 +94,7 @@ static const u8 *const sLetters[14][2] =
 
     [LETTER_MARY_ARIC_DECODED] =
     {
-
+        gText_LetterMaryAricDecodedPageOne,
     },
 
     [LETTER_MOM_DAD_ENCODED] =
@@ -104,7 +104,7 @@ static const u8 *const sLetters[14][2] =
 
     [LETTER_MOM_DAD_DECODED] =
     {
-
+        gText_LetterMomDadDecodedPageOne,
     },
 
     [LETTER_BRO_SIS_ENCODED] =
@@ -114,7 +114,7 @@ static const u8 *const sLetters[14][2] =
 
     [LETTER_BRO_SIS_DECODED] =
     {
-
+        gText_LetterBroSisDecodedPageOne,
     },
 
     [LETTER_CHRIS_ENCODED] =
@@ -124,7 +124,7 @@ static const u8 *const sLetters[14][2] =
 
     [LETTER_CHRIS_DECODED] =
     {
-
+        gText_LetterChrisDecodedPageOne,
     },
 };
 
@@ -226,7 +226,8 @@ static void SetLettersReadVar(u16 flag)
     {
         FlagSet(flag);
         lettersRead = VarGet(VAR_LETTERS_READ);
-        VarSet(VAR_LETTERS_READ, lettersRead++);
+        lettersRead++;
+        VarSet(VAR_LETTERS_READ, lettersRead);
     }
 }
 
@@ -237,18 +238,25 @@ static void Menu_RunSetup(void)
     {
         case LETTER_RIDDLE_DECODED:
             SetLettersReadVar(FLAG_READ_LETTER_1);
+            break;
         case LETTER_MEL_MIKE_DECODED:
             SetLettersReadVar(FLAG_READ_LETTER_2);
+            break;
         case LETTER_TY_ALEX_DECODED:
             SetLettersReadVar(FLAG_READ_LETTER_3);
+            break;
         case LETTER_MARY_ARIC_DECODED:
             SetLettersReadVar(FLAG_READ_LETTER_4);
+            break;
         case LETTER_MOM_DAD_DECODED:
             SetLettersReadVar(FLAG_READ_LETTER_5);
+            break;
         case LETTER_BRO_SIS_DECODED:
             SetLettersReadVar(FLAG_READ_LETTER_6);
+            break;
         case LETTER_CHRIS_DECODED:
             SetLettersReadVar(FLAG_READ_LETTER_7);
+            break;
     }
 
     while (1)

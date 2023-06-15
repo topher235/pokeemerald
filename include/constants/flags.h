@@ -1240,7 +1240,7 @@
 #define FLAG_READ_LETTER_5                                          0x4A6
 #define FLAG_READ_LETTER_6                                          0x4A7
 #define FLAG_READ_LETTER_7                                          0x4A8
-#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
+#define FLAG_HIDE                                                   0x4A9
 #define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
 #define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
 #define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag

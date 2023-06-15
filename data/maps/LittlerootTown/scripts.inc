@@ -1084,14 +1084,35 @@ LittlerootTown_EventScript_WarpNavelRock::
 	// giveitem ITEM_LETTER_4_ENCODED
 	// setvar VAR_SOOTOPOLIS_GYM, 1
 	// warp MAP_SOOTOPOLIS_CITY_GYM_1F, 0, 0, 0
-	warp MAP_EVER_GRANDE_CITY_HALL_OF_FAME, 7, 16
-	// warp MAP_ROUTE_119, 22, 34
+	// warp MAP_EVER_GRANDE_CITY_HALL_OF_FAME, 7, 16
+	
+	// setvar VAR_PROPOSAL_STATE, 1
+	// setflag FLAG_PROPOSAL_HIDE
+	// additem ITEM_LETTER_2_ENCODED
+	// additem ITEM_LETTER_3_ENCODED
+	// additem ITEM_LETTER_4_ENCODED
+	// additem ITEM_LETTER_5_ENCODED
+	// additem ITEM_LETTER_6_ENCODED
+	// setvar VAR_LETTERS_READ, 0
+	// clearflag FLAG_READ_LETTER_1
+	// clearflag FLAG_READ_LETTER_2
+	// clearflag FLAG_READ_LETTER_3
+	// clearflag FLAG_READ_LETTER_4
+	// clearflag FLAG_READ_LETTER_5
+	// clearflag FLAG_READ_LETTER_6
+	// clearflag FLAG_READ_LETTER_7
+	// warp MAP_ROUTE119, 32, 85
+
+	giveitem ITEM_MYSTIC_TICKET
+	setflag FLAG_ENABLE_SHIP_NAVEL_ROCK
+	warp MAP_LILYCOVE_CITY, 0, 16
 
 	// setflag FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_HIDE
 	// warp MAP_PETALBURG_CITY, 0, 0, 0
 	// setflag FLAG_LILYCOVE_MYSTERY_NPC_HIDE
 	// setvar VAR_LILYCOVE_MYSTERY_NPC, 1
 	// warp MAP_LILYCOVE_CITY, 0, 16
+	// warp MAP_RUSTBORO_CITY, 0, 0, 0
 	release
 	end
 
