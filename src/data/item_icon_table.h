@@ -420,7 +420,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_LETTER_7_DECODED] = {gItemIcon_RetroMail, gItemIconPalette_RetroMail},
 
     // Diamond Ring
-    [ITEM_DIAMOND_RING] = {gItemIcon_Gem, gItemIconPalette_Ruby},
+    [ITEM_DIAMOND_RING] = {gItemIcon_DiamondRing, gItemIconPalette_DiamondRing},
     
     // decoded options:
     // bead_mail
