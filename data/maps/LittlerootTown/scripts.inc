@@ -1103,9 +1103,11 @@ LittlerootTown_EventScript_WarpNavelRock::
 	// clearflag FLAG_READ_LETTER_7
 	// warp MAP_ROUTE119, 32, 85
 
-	giveitem ITEM_MYSTIC_TICKET
-	setflag FLAG_ENABLE_SHIP_NAVEL_ROCK
-	warp MAP_LILYCOVE_CITY, 0, 16
+	// giveitem ITEM_MYSTIC_TICKET
+	// setflag FLAG_ENABLE_SHIP_NAVEL_ROCK
+	// warp MAP_LILYCOVE_CITY, 0, 16
+
+	giveitem ITEM_DIAMOND_RING
 
 	// setflag FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_HIDE
 	// warp MAP_PETALBURG_CITY, 0, 0, 0

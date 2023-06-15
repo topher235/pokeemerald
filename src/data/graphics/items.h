@@ -739,3 +739,6 @@ const u32 gItemIconPalette_OldSeaMap[] = INCBIN_U32("graphics/items/icon_palette
 
 const u32 gItemIcon_Redbull[] = INCBIN_U32("graphics/items/icons/redbull.4bpp.lz");
 const u32 gItemIconPalette_Redbull[] = INCBIN_U32("graphics/items/icon_palettes/redbull.gbapal.lz");
+
+const u32 gItemIcon_DiamondRing[] = INCBIN_U32("graphics/items/icons/diamond_ring.4bpp.lz");
+const u32 gItemIconPalette_DiamondRing[] = INCBIN_U32("graphics/items/icon_palettes/diamond_ring.gbapal.lz");
