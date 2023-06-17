@@ -1103,9 +1103,7 @@ LittlerootTown_EventScript_WarpNavelRock::
 	// clearflag FLAG_READ_LETTER_7
 	// warp MAP_ROUTE119, 32, 85
 
-	setflag FLAG_LETTER_1_DECODED
-	setvar VAR_MYSTIC_TICKET_STATE, 0
-	goto_if_set FLAG_RECEIVED_MYSTIC_TICKET, WarpLilycove
+	giveitem ITEM_LETTER_1_DECODED
 
 	// giveitem ITEM_MYSTIC_TICKET
 	// setflag FLAG_ENABLE_SHIP_NAVEL_ROCK

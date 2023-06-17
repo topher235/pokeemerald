@@ -128,6 +128,25 @@ static const u8 *const sLetters[14][2] =
     },
 };
 
+static const u8 sLettersMaxPages[14] =
+{
+    [LETTER_RIDDLE_ENCODED] = 2,
+    [LETTER_RIDDLE_DECODED] = 1,
+    [LETTER_MEL_MIKE_ENCODED] = 1,
+    [LETTER_MEL_MIKE_DECODED] = 1,
+    [LETTER_TY_ALEX_ENCODED] = 1,
+    [LETTER_TY_ALEX_DECODED] = 1,
+    [LETTER_MARY_ARIC_ENCODED] = 1,
+    [LETTER_MARY_ARIC_DECODED] = 1,
+    [LETTER_MOM_DAD_ENCODED] = 1,
+    [LETTER_MOM_DAD_DECODED] = 1,
+    [LETTER_BRO_SIS_ENCODED] = 1,
+    [LETTER_BRO_SIS_DECODED] = 1,
+    [LETTER_CHRIS_ENCODED] = 1,
+    [LETTER_CHRIS_DECODED] = 1,
+};
+
+
 //==========EWRAM==========//
 static EWRAM_DATA struct LetterResources *sLetterDataPtr = NULL;
 static EWRAM_DATA u8 *sBg1TilemapBuffer = NULL;
@@ -467,7 +486,7 @@ static void Task_MenuTurnOff(u8 taskId)
 
 static void Task_UINextPage(u8 taskId)
 {
-    if (sLetterDataPtr->pageNumber < (ARRAY_COUNT(sLetters[sLetterDataPtr->letter]) - 1))
+    if (sLetterDataPtr->pageNumber < (sLettersMaxPages[sLetterDataPtr->letter] - 1))
     {
         sLetterDataPtr->pageNumber++;
         PrintToWindow(WINDOW_1, FONT_WHITE);
