@@ -1073,9 +1073,9 @@ LittlerootTown_EventScript_WarpNavelRock::
 	faceplayer
 	msgbox LittleRoot_Text_WarpNavelRockOne, MSGBOX_AUTOCLOSE
 	
-	fadescreen FADE_TO_BLACK
-	setflag FLAG_REMOVE_WARP_FADE
-	msgbox LittleRoot_Text_WarpNavelRockTwo, MSGBOX_AUTOCLOSE
+	// fadescreen FADE_TO_BLACK
+	// setflag FLAG_REMOVE_WARP_FADE
+	// msgbox LittleRoot_Text_WarpNavelRockTwo, MSGBOX_AUTOCLOSE
 
 	// setflag FLAG_LETTER_3_HIDE
 	// setflag FLAG_LETTER_4_HIDE
@@ -1103,11 +1103,15 @@ LittlerootTown_EventScript_WarpNavelRock::
 	// clearflag FLAG_READ_LETTER_7
 	// warp MAP_ROUTE119, 32, 85
 
+	setflag FLAG_LETTER_1_DECODED
+	setvar VAR_MYSTIC_TICKET_STATE, 0
+	goto_if_set FLAG_RECEIVED_MYSTIC_TICKET, WarpLilycove
+
 	// giveitem ITEM_MYSTIC_TICKET
 	// setflag FLAG_ENABLE_SHIP_NAVEL_ROCK
 	// warp MAP_LILYCOVE_CITY, 0, 16
 
-	giveitem ITEM_DIAMOND_RING
+	// giveitem ITEM_DIAMOND_RING
 
 	// setflag FLAG_SPECIAL_ENCOUNTER_PETALBURG_CITY_HIDE
 	// warp MAP_PETALBURG_CITY, 0, 0, 0
@@ -1115,6 +1119,11 @@ LittlerootTown_EventScript_WarpNavelRock::
 	// setvar VAR_LILYCOVE_MYSTERY_NPC, 1
 	// warp MAP_LILYCOVE_CITY, 0, 16
 	// warp MAP_RUSTBORO_CITY, 0, 0, 0
+	release
+	end
+
+WarpLilycove::
+	warp MAP_LILYCOVE_CITY, 0, 16
 	release
 	end
 
