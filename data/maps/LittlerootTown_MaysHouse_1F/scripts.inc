@@ -410,12 +410,9 @@ RivalsHouse_1F_Text_DoYouHavePokemon:
 	.string "own POKéMON?$"
 
 LittlerootTown_MaysHouse_1F_EventScript_MysticTicketCutscene::
-	// change female to male and rival_mom to mom
 	lock
-	addobject LOCALID_MOM
-	delay 15
 	checkplayergender
-	goto_if_eq VAR_RESULT, FEMALE, MaysHouse_ES_NoOp
+	goto_if_eq VAR_RESULT, MALE, MaysHouse_ES_NoOp
 	goto_if_set FLAG_RECEIVED_MYSTIC_TICKET, MaysHouse_ES_NoOp
 	applymovement LOCALID_MOM, Common_Movement_ExclamationMark
 	delay 30
@@ -423,7 +420,7 @@ LittlerootTown_MaysHouse_1F_EventScript_MysticTicketCutscene::
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
-	msgbox MaysHouse_Text_MysticTicketCutsceneIntro, MSGBOX_DEFAULT
+	msgbox MaysHouse_Text_MysticTicketExplain, MSGBOX_DEFAULT
 	giveitem ITEM_MYSTIC_TICKET, 1
 	applymovement LOCALID_MOM, MaysHouse_Movement_MomGiveMysticTicketReturn
 	waitmovement 0
@@ -458,7 +455,7 @@ MaysHouse_Movement_MomGiveMysticTicketReturn:
 	face_left
 	step_end
 
-MaysHouse_Text_MysticTicketCutsceneIntro:
+MaysHouse_Text_MysticTicketExplain:
 	.string "Oh, {PLAYER}! A friend of yours stopped\n"
 	.string "by and dropped something off for you.\p"
 	.string "I didn't catch his name because he\n"
