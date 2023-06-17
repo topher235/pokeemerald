@@ -162,6 +162,8 @@ void ResetMysteryNPC(void)
     FlagSet(FLAG_LETTER_4_HIDE);
     FlagClear(FLAG_LILYCOVE_HOUSE4_LETTER_HIDE);
     FlagSet(FLAG_PROPOSAL_HIDE);
+    FlagClear(FLAG_RECEIVED_MYSTIC_TICKET);
+    FlagClear(FLAG_ENABLE_SHIP_NAVEL_ROCK);
     FlagClear(FLAG_READ_LETTER_1);
     FlagClear(FLAG_READ_LETTER_2);
     FlagClear(FLAG_READ_LETTER_3);
@@ -174,6 +176,7 @@ void ResetMysteryNPC(void)
     VarSet(VAR_GAME_CLEARED_STATE, 0);
     VarSet(VAR_PROPOSAL_STATE, 0);
     VarSet(VAR_LETTERS_READ, 0);
+    VarSet(VAR_MYSTIC_TICKET_STATE, 0);
 }
 
 void NewGameInitData(void)
