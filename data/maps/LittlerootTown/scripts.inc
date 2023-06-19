@@ -1086,8 +1086,8 @@ LittlerootTown_EventScript_WarpNavelRock::
 	// warp MAP_SOOTOPOLIS_CITY_GYM_1F, 0, 0, 0
 	// warp MAP_EVER_GRANDE_CITY_HALL_OF_FAME, 7, 16
 	
-	// setvar VAR_PROPOSAL_STATE, 1
-	// setflag FLAG_PROPOSAL_HIDE
+	setvar VAR_PROPOSAL_STATE, 1
+	setflag FLAG_PROPOSAL_HIDE
 	// additem ITEM_LETTER_2_ENCODED
 	// additem ITEM_LETTER_3_ENCODED
 	// additem ITEM_LETTER_4_ENCODED
@@ -1101,9 +1101,9 @@ LittlerootTown_EventScript_WarpNavelRock::
 	// clearflag FLAG_READ_LETTER_5
 	// clearflag FLAG_READ_LETTER_6
 	// clearflag FLAG_READ_LETTER_7
-	// warp MAP_ROUTE119, 32, 85
+	warp MAP_ROUTE119, 32, 85
 
-	giveitem ITEM_LETTER_1_DECODED
+	// giveitem ITEM_LETTER_1_DECODED
 
 	// giveitem ITEM_MYSTIC_TICKET
 	// setflag FLAG_ENABLE_SHIP_NAVEL_ROCK

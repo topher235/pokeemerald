@@ -690,6 +690,8 @@
 #define OBJ_EVENT_GFX_UNOWN_QUESTION             679
 
 #define OBJ_EVENT_GFX_EXPANDING_SPARKLE          680
+#define OBJ_EVENT_GFX_MAN_6                      681
+
 
 #else
 // There are no OLD_UNOWN constants in the pokemon_expansion, and the species constants are reordered
@@ -891,7 +893,7 @@
 
 #endif
 
-#define NUM_OBJ_EVENT_GFX                        681
+#define NUM_OBJ_EVENT_GFX                        682
 
 
 // These are dynamic object gfx ids.
