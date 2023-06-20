@@ -1101,7 +1101,7 @@ LittlerootTown_EventScript_WarpNavelRock::
 	// clearflag FLAG_READ_LETTER_5
 	// clearflag FLAG_READ_LETTER_6
 	// clearflag FLAG_READ_LETTER_7
-	warp MAP_ROUTE119, 32, 85
+	// warp MAP_ROUTE119, 32, 85
 
 	// giveitem ITEM_LETTER_1_DECODED
 
@@ -1117,6 +1117,7 @@ LittlerootTown_EventScript_WarpNavelRock::
 	// setvar VAR_LILYCOVE_MYSTERY_NPC, 1
 	// warp MAP_LILYCOVE_CITY, 0, 16
 	// warp MAP_RUSTBORO_CITY, 0, 0, 0
+	giveitem ITEM_LEFTOVERS
 	release
 	end
 

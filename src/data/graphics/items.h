@@ -453,8 +453,8 @@ const u32 gItemIconPalette_ScopeLens[] = INCBIN_U32("graphics/items/icon_palette
 const u32 gItemIcon_MetalCoat[] = INCBIN_U32("graphics/items/icons/metal_coat.4bpp.lz");
 const u32 gItemIconPalette_MetalCoat[] = INCBIN_U32("graphics/items/icon_palettes/metal_coat.gbapal.lz");
 
-const u32 gItemIcon_Leftovers[] = INCBIN_U32("graphics/items/icons/leftovers.4bpp.lz");
-const u32 gItemIconPalette_Leftovers[] = INCBIN_U32("graphics/items/icon_palettes/leftovers.gbapal.lz");
+const u32 gItemIcon_Leftovers[] = INCBIN_U32("graphics/items/icons/nachos.4bpp.lz");
+const u32 gItemIconPalette_Leftovers[] = INCBIN_U32("graphics/items/icon_palettes/nachos.gbapal.lz");
 
 const u32 gItemIcon_DragonScale[] = INCBIN_U32("graphics/items/icons/dragon_scale.4bpp.lz");
 const u32 gItemIconPalette_DragonScale[] = INCBIN_U32("graphics/items/icon_palettes/dragon_scale.gbapal.lz");
