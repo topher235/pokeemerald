@@ -54,6 +54,7 @@ EventScript_PickUpLetter2::
 	bufferitemname STR_VAR_1, ITEM_LETTER_2_ENCODED
 	msgbox Text_ReceivedLetter2, MSGBOX_DEFAULT
 	giveitem ITEM_LETTER_2_ENCODED, 1
+	setvar VAR_MYSTIC_TICKET_STATE, 1
 	release
 	end
 
