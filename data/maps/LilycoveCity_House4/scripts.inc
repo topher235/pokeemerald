@@ -39,6 +39,7 @@ EventScript_Letter1Decoded::
 	goto_if_eq VAR_RESULT, 1, EventScript_LetterAlreadyGiven
 	msgbox Text_ExplainLetter, MSGBOX_DEFAULT
 	giveitem ITEM_LETTER_1_DECODED, 1
+	setvar VAR_MYSTIC_TICKET_STATE, 1
 	release
 	end
 
@@ -54,7 +55,6 @@ EventScript_PickUpLetter2::
 	bufferitemname STR_VAR_1, ITEM_LETTER_2_ENCODED
 	msgbox Text_ReceivedLetter2, MSGBOX_DEFAULT
 	giveitem ITEM_LETTER_2_ENCODED, 1
-	setvar VAR_MYSTIC_TICKET_STATE, 1
 	release
 	end
 
