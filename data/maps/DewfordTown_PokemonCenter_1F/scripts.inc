@@ -37,3 +37,18 @@ DewfordTown_PokemonCenter_1F_Text_FaintedMonCanUseHM:
 	.string "battle, it can still use a move learned\l"
 	.string "from a HIDDEN MACHINE (HM).$"
 
+DewfordTown_PokemonCenter_ES_Gossip1::
+	msgbox DewfordTown_PokemonCenter_Text_Gossip1, MSGBOX_NPC
+	end
+
+DewfordTown_PokemonCenter_ES_Gossip2::
+	msgbox DewfordTown_PokemonCenter_Text_Gossip2, MSGBOX_NPC
+	end
+
+DewfordTown_PokemonCenter_Text_Gossip1:
+	.string "Did you see that man scratching out\n"
+	.string "notes on his paper?$"
+
+DewfordTown_PokemonCenter_Text_Gossip2:
+	.string "I tried to sneak a peek, but I couldn't\n"
+	.string "make out a single thing!$"

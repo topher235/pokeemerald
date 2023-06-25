@@ -1383,3 +1383,23 @@ SlateportCity_Text_TakingBattleTentChallenge:
 	.string "After all, a tough TRAINER is\n"
 	.string "the perfect fit for the BATTLE TENT!\p"
 	.string "Give it your best effort!$"
+
+SlateportCity_ES_OldWomanSkitty::
+	msgbox SlateportCity_Text_OldWomanSkitty, MSGBOX_NPC
+	end
+
+SlateportCity_Text_OldWomanSkitty:
+	.string "Some very kind, young man helped me get\n"
+	.string "my SKITTY out of a tree.\p"
+	.string "It’s so nice to see people\n"
+	.string "your age being so kind!$"
+
+SlateportCity_ES_Sailor::
+	msgbox SlateportCity_Text_Sailor, MSGBOX_NPC
+	end
+
+SlateportCity_Text_Sailor:
+	.string "A young man asked me to take him\n"
+	.string "to NAVEL ROCK, but I have no idea\l"
+	.string "where that is!\p"
+	.string "I wonder if he ever made it...$"

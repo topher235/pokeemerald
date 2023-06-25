@@ -665,3 +665,16 @@ MauvilleCity_Text_ExplainTV:
 
 MauvilleCity_Text_BeenCheckingOutTV:
 	.string "Hi, have you been checking out TVs?$"
+
+MauvilleCity_ES_PokefanLugiaHooh::
+	msgbox MauvilleCity_Text_PokefanLugiaHooh, MSGBOX_NPC
+	end
+
+MauvilleCity_Text_PokefanLugiaHooh:
+	.string "Legends say there are 2 POKéMON who\n"
+	.string "inhabit an island together.\p"
+	.string "One has feathers that glow, bringing\n"
+	.string "joy to all who gaze upon them.\p"
+	.string "The other is said to have chosen to\n"
+	.string "live alone under the sea to keep\l"
+	.string "its power from harming anyone.$"

@@ -55,3 +55,11 @@ FortreeCity_Mart_Text_RareCandyMakesMonGrow:
 	.string "A RARE CANDY makes a POKéMON grow\n"
 	.string "immediately by one level.$"
 
+FortreeCity_Mart_ES_FriendWritesBadLetters::
+	msgbox FortreeCity_Mart_Text_FriendWritesBadLetters, MSGBOX_NPC
+	end
+
+FortreeCity_Mart_Text_FriendWritesBadLetters:
+	.string "Sometimes my friend writes me\n"
+	.string "letters, but I can't read them.\p"
+	.string "He has such terrible handwriting...$"
