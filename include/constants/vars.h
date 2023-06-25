@@ -269,8 +269,8 @@
 #define VAR_GAME_CLEARED_STATE                           0x40FA
 #define VAR_PROPOSAL_STATE                               0x40FB
 #define VAR_LETTERS_READ                                 0x40FC
-#define VAR_MYSTIC_TICKET_STATE                          0x40FD
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
+#define VAR_MYSTIC_TICKET_STATE_BRENDAN                  0x40FD
+#define VAR_MYSTIC_TICKET_STATE_MAY                      0x40FE
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
 
 #define VARS_END                                         0x40FF

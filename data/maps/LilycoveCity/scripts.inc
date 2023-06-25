@@ -465,7 +465,7 @@ LilycoveCity_EventScript_MysteryNpcCutscene::
 	removeobject 23
 	applymovement OBJ_EVENT_ID_CAMERA, LilycoveCity_Movement_CameraReturnToPlayer
 	waitmovement OBJ_EVENT_ID_CAMERA
-	setvar VAR_LILYCOVE_MYSTERY_NPC, 0
+	setvar VAR_LILYCOVE_MYSTERY_NPC, 2
 	return
 
 LilycoveCity_Movement_CameraDiagDownRight:

@@ -1086,8 +1086,8 @@ LittlerootTown_EventScript_WarpNavelRock::
 	// warp MAP_SOOTOPOLIS_CITY_GYM_1F, 0, 0, 0
 	// warp MAP_EVER_GRANDE_CITY_HALL_OF_FAME, 7, 16
 	
-	setvar VAR_PROPOSAL_STATE, 1
-	setflag FLAG_PROPOSAL_HIDE
+	// setvar VAR_PROPOSAL_STATE, 1
+	// setflag FLAG_PROPOSAL_HIDE
 	// additem ITEM_LETTER_2_ENCODED
 	// additem ITEM_LETTER_3_ENCODED
 	// additem ITEM_LETTER_4_ENCODED
@@ -1117,7 +1117,16 @@ LittlerootTown_EventScript_WarpNavelRock::
 	// setvar VAR_LILYCOVE_MYSTERY_NPC, 1
 	// warp MAP_LILYCOVE_CITY, 0, 16
 	// warp MAP_RUSTBORO_CITY, 0, 0, 0
-	giveitem ITEM_LEFTOVERS
+
+	givemon SPECIES_RAYQUAZA, 100
+	givemon SPECIES_MILOTIC, 5
+	givemon SPECIES_MILOTIC, 5
+	givemon SPECIES_MILOTIC, 5
+	givemon SPECIES_MILOTIC, 5
+	additem ITEM_LETTER_1_ENCODED, 1
+	setflag FLAG_LETTER_1_DECODED
+	warp MAP_LILYCOVE_CITY, 0, 16
+
 	release
 	end
 

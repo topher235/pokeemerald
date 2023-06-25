@@ -14,6 +14,8 @@ LilycoveCity_Harbor_OnTransition:
 LilycoveCity_Harbor_EventScript_FerryAttendant::
 	lock
 	faceplayer
+	goto_if_eq VAR_MYSTIC_TICKET_STATE_BRENDAN, 2, LilycoveCity_Harbor_EventScript_ShipNavelRockBrendan
+	goto_if_eq VAR_MYSTIC_TICKET_STATE_MAY, 2, LilycoveCity_Harbor_EventScript_ShipNavelRockMay
 	goto_if_unset FLAG_SYS_GAME_CLEAR, LilycoveCity_Harbor_EventScript_FerryUnavailable
 	call LilycoveCity_Harbor_EventScript_GetEonTicketState
 	call LilycoveCity_Harbor_EventScript_GetAuroraTicketState
@@ -28,6 +30,16 @@ LilycoveCity_Harbor_EventScript_FerryAttendant::
 	goto_if_eq VAR_TEMP_B, 8, LilycoveCity_Harbor_EventScript_MysticTicketFirstTime
 	goto_if_ne VAR_TEMP_B, 0, LilycoveCity_Harbor_EventScript_MultipleEventTicketsFirstTime
 	goto LilycoveCity_Harbor_EventScript_NoFirstTimeEventTickets
+	end
+
+LilycoveCity_Harbor_EventScript_ShipNavelRockBrendan::
+	setvar VAR_MYSTIC_TICKET_STATE_BRENDAN, 3
+	goto LilycoveCity_Harbor_EventScript_MysticTicketFirstTime
+	end
+
+LilycoveCity_Harbor_EventScript_ShipNavelRockMay::
+	setvar VAR_MYSTIC_TICKET_STATE_MAY, 3
+	goto LilycoveCity_Harbor_EventScript_MysticTicketFirstTime
 	end
 
 @ First goto_if_eq is unnecessary; identical scripts
