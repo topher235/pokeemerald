@@ -6,6 +6,7 @@ LilycoveCity_House4_MapScripts::
 LilycoveCity_House4_EventScript_Man1::
 	lock
 	faceplayer
+	goto_if_set FLAG_LETTER_1_GIVEN_TO_BE_DECODED, EventScript_Letter1Given
 	checkitem ITEM_LETTER_1_ENCODED, 1
 	goto_if_eq VAR_RESULT, 1, EventScript_LetterDecoder
 	msgbox Text_Greeting, MSGBOX_DEFAULT
@@ -39,9 +40,19 @@ EventScript_Letter1Decoded::
 	goto_if_eq VAR_RESULT, 1, EventScript_LetterAlreadyGiven
 	msgbox Text_ExplainLetter, MSGBOX_DEFAULT
 	giveitem ITEM_LETTER_1_DECODED, 1
-	setvar VAR_MYSTIC_TICKET_STATE, 1
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, EventScript_SetMysticTicketStateBrendanOne
+	call_if_eq VAR_RESULT, FEMALE, EventScript_SetMysticTicketStateMayOne
 	release
 	end
+
+EventScript_SetMysticTicketStateBrendanOne::
+	setvar VAR_MYSTIC_TICKET_STATE_BRENDAN, 1
+	return
+
+EventScript_SetMysticTicketStateMayOne::
+	setvar VAR_MYSTIC_TICKET_STATE_MAY, 1
+	return
 
 EventScript_LetterAlreadyGiven::
 	msgbox Text_LetterAlreadyGiven, MSGBOX_DEFAULT

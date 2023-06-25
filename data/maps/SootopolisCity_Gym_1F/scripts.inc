@@ -179,7 +179,7 @@ SootopolisCity_Gym_1F_EventScript_GymStatue::
 	end
 
 EventScript_GiveLetter5Cutscene::
-	lockall
+	lock
 	applymovement LOCALID_GYM_GUIDE, Movement_GymGuideApproachPlayer
 	waitmovement 0
 	checkitem ITEM_LETTER_3_ENCODED
@@ -194,8 +194,8 @@ EventScript_GiveLetter5Cutscene::
 EventScript_GymGuideReturnToPost::
 	applymovement LOCALID_GYM_GUIDE, Movement_GymGuideReturnToPost
 	waitmovement 0
-	setvar VAR_SOOTOPOLIS_GYM, 0
-	releaseall
+	setvar VAR_SOOTOPOLIS_GYM, 2
+	release
 	end
 
 EventScript_RecommendSolvingRiddle::

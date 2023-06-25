@@ -30,14 +30,14 @@ MagmaHideout_2F_2F_EventScript_SpecialEncounter::
 
 MagmaHideout_2F_2F_EventScript_SpecialEncounterCompleted::
 	msgbox MagmaHideout_2F_2F_Text_SpecialEncounterCompleted, MSGBOX_DEFAULT
-	releaseall
+	release
 	end
 
 MagmaHideout_2F_2F_EventScript_SpecialEncounterGreeting::
 	msgbox MagmaHideout_2F_2F_Text_SpecialEncounterGreeting, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, MagmaHideout_2F_2F_EventScript_SpecialEncounterBattle
 	msgbox MagmaHideout_2F_2F_Text_SpecialEncounterComeBackWhenReady, MSGBOX_DEFAULT
-	releaseall
+	release
 	end
 
 MagmaHideout_2F_2F_EventScript_SpecialEncounterBattle::
@@ -52,7 +52,7 @@ MagmaHideout_2F_2F_EventScript_SpecialEncounterVictory::
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, MagmaHideout_2F_2F_EventScript_SendMonToParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, MagmaHideout_2F_2F_EventScript_SendMonToPC
 	goto Common_EventScript_NoMoreRoomForPokemon
-	releaseall
+	release
 	end
 
 MagmaHideout_2F_2F_EventScript_SendMonToParty::
@@ -66,6 +66,7 @@ MagmaHideout_2F_2F_EventScript_SendMonToParty::
 
 MagmaHideout_2F_2F_EventScript_SendMonToPC::
 	call MagmaHideout_2F_2F_EventScript_ReceivedMonFanfare
+	setvar VAR_TEMP_1, SPECIES_MEWTWO
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MagmaHideout_2F_2F_EventScript_MonTransferredToPC
 	call Common_EventScript_NameReceivedBoxMon
@@ -87,7 +88,7 @@ MagmaHideout_2F_2F_EventScript_MonTransferredToPC::
 	end
 
 MagmaHideout_2F_2F_EventScript_ReceivedMon::
-	releaseall
+	release
 	end
 
 MagmaHideout_2F_2R_Text_Grunt15Intro:

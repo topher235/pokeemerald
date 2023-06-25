@@ -277,6 +277,7 @@ BrendansHouse_2F_EventScript_ReceivePokenavCall::
 	pokenavcall BrendansHouse_2F_Text_ReceivePokenavCall
 	waitmessage
 	setvar VAR_PROPOSAL_STATE, 1
+	setvar VAR_GAME_CLEARED_STATE, 2
 	releaseall
 	end
 
