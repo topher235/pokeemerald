@@ -433,3 +433,22 @@ MossdeepCity_Text_SootopolisNewGymLeader:
 	.string "People tell me the new LEADER once\n"
 	.string "mentored WALLACE.$"
 
+MossdeepCity_ES_LetterDecodedCall::
+	lock
+	goto_if_set FLAG_RECEIVED_CALL_LETTER_1_DECODED, MossdeepCity_ES_NoOp
+	pokenavcall MossdeepCity_Text_LetterDecodedCall
+	waitmessage
+	setflag FLAG_RECEIVED_CALL_LETTER_1_DECODED
+	release
+	end
+
+MossdeepCity_ES_NoOp::
+	release
+	end
+
+MossdeepCity_Text_LetterDecodedCall:
+	.string "Heya {PLAYER}! It's me, LEON!\n"
+	.string "I've got that letter from our bud\l"
+	.string "all worked out for you.\p"
+	.string "You can come pick it up from my\n"
+	.string "house in LILYCOVE CITY whenever.$"

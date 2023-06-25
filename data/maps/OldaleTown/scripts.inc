@@ -399,3 +399,16 @@ OldaleTown_Text_TownSign:
 	.string "OLDALE TOWN\n"
 	.string "“Where things start off scarce.”$"
 
+OldaleTown_ES_OldFriend::
+	msgbox OldaleTown_Text_OldFriend, MSGBOX_NPC
+	end
+
+OldaleTown_Text_OldFriend:
+	.string "Oh! {PLAYER}, it's you!\n"
+	.string "It's been a long time; do you\l"
+	.string "remember me? It's MAY!\p"
+	.string "I also recently moved to HOENN.\n"
+	.string "Do you remember that kid we used\l"
+	.string "to hang out with? What was his\l"
+	.string "name? AARON? No, CHARLIE? No that\l"
+	.string "isn't quite right...$"

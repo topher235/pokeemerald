@@ -1724,3 +1724,15 @@ SootopolisCity_Text_DazzledByMentor:
 	.string "WALLACE: I'm sure that you will be\n"
 	.string "dazzled by my mentor's breathtakingly\l"
 	.string "elegant battle style.$"
+
+SootopolisCity_ES_GotRunInto::
+	msgbox SootopolisCity_Text_GotRunInto, MSGBOX_NPC
+	end
+
+SootopolisCity_Text_GotRunInto:
+	.string "Some people just don't pay attention!\n"
+	.string "A young man just ran into me\l"
+	.string "muttering something about needing\l"
+	.string "to finish preparations.\p"
+	.string "What could be so important?!\n"
+	.string "At least you've paid attention...$"

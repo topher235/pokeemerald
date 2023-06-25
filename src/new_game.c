@@ -175,6 +175,7 @@ void ResetMysteryNPC(void)
     FlagClear(FLAG_READ_LETTER_5);
     FlagClear(FLAG_READ_LETTER_6);
     FlagClear(FLAG_READ_LETTER_7);
+    FlagClear(FLAG_RECEIVED_CALL_LETTER_1_DECODED);
     VarSet(VAR_LILYCOVE_MYSTERY_NPC, 0);
     VarSet(VAR_SOOTOPOLIS_GYM, 0);
     VarSet(VAR_GAME_CLEARED_STATE, 0);
