@@ -3038,18 +3038,72 @@ extern const u8 gText_ExpShareOff[];
 extern const u8 gText_Letter[];
 extern const u8 gText_LetterPageOne[];
 extern const u8 gText_LetterPageTwo[];
+
+extern const u8 gText_LetterRiddleEncodedPageOne[];
+
 extern const u8 gText_LetterRiddleDecodedPageOne[];
+extern const u8 gText_LetterRiddleDecodedPageTwo[];
+
+extern const u8 gText_LetterMelMikeEncodedPageOne[];
 
 extern const u8 gText_LetterMelMikeDecodedPageOne[];
+extern const u8 gText_LetterMelMikeDecodedPageTwo[];
+extern const u8 gText_LetterMelMikeDecodedPageThree[];
+extern const u8 gText_LetterMelMikeDecodedPageFour[];
+extern const u8 gText_LetterMelMikeDecodedPageFive[];
+extern const u8 gText_LetterMelMikeDecodedPageSix[];
+
+extern const u8 gText_LetterTyAlexEncodedPageOne[];
+extern const u8 gText_LetterTyAlexEncodedPageTwo[];
 
 extern const u8 gText_LetterTyAlexDecodedPageOne[];
+extern const u8 gText_LetterTyAlexDecodedPageTwo[];
+extern const u8 gText_LetterTyAlexDecodedPageThree[];
+extern const u8 gText_LetterTyAlexDecodedPageFour[];
+extern const u8 gText_LetterTyAlexDecodedPageFive[];
+extern const u8 gText_LetterTyAlexDecodedPageSix[];
+
+extern const u8 gText_LetterMaryAricEncodedPageOne[];
+extern const u8 gText_LetterMaryAricEncodedPageTwo[];
 
 extern const u8 gText_LetterMaryAricDecodedPageOne[];
+extern const u8 gText_LetterMaryAricDecodedPageTwo[];
+extern const u8 gText_LetterMaryAricDecodedPageThree[];
+extern const u8 gText_LetterMaryAricDecodedPageFour[];
+extern const u8 gText_LetterMaryAricDecodedPageFive[];
+extern const u8 gText_LetterMaryAricDecodedPageSix[];
+
+extern const u8 gText_LetterMomDadEncodedPageOne[];
 
 extern const u8 gText_LetterMomDadDecodedPageOne[];
+extern const u8 gText_LetterMomDadDecodedPageTwo[];
+extern const u8 gText_LetterMomDadDecodedPageThree[];
+extern const u8 gText_LetterMomDadDecodedPageFour[];
+extern const u8 gText_LetterMomDadDecodedPageFive[];
+extern const u8 gText_LetterMomDadDecodedPageSix[];
+extern const u8 gText_LetterMomDadDecodedPageSeven[];
+extern const u8 gText_LetterMomDadDecodedPageEight[];
+extern const u8 gText_LetterMomDadDecodedPageNine[];
+extern const u8 gText_LetterMomDadDecodedPageTen[];
+
+extern const u8 gText_LetterBroSisEncodedPageOne[];
 
 extern const u8 gText_LetterBroSisDecodedPageOne[];
+extern const u8 gText_LetterBroSisDecodedPageTwo[];
+extern const u8 gText_LetterBroSisDecodedPageThree[];
+extern const u8 gText_LetterBroSisDecodedPageFour[];
+extern const u8 gText_LetterBroSisDecodedPageFive[];
+extern const u8 gText_LetterBroSisDecodedPageSix[];
+extern const u8 gText_LetterBroSisDecodedPageSeven[];
+
+extern const u8 gText_LetterChrisEncodedPageOne[];
 
 extern const u8 gText_LetterChrisDecodedPageOne[];
+extern const u8 gText_LetterChrisDecodedPageTwo[];
+extern const u8 gText_LetterChrisDecodedPageThree[];
+extern const u8 gText_LetterChrisDecodedPageFour[];
+extern const u8 gText_LetterChrisDecodedPageFive[];
+extern const u8 gText_LetterChrisDecodedPageSix[];
+
 
 #endif // GUARD_STRINGS_H

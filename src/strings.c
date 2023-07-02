@@ -1831,19 +1831,79 @@ const u8 gText_ExpShareOff[] = _("Turned off the Exp. Share.\pParty will no long
 
 // Letters
 // maximum number of characters per line: ~41
-const u8 gText_LetterPageOne[] = _("Page 1\nLine 2\n Line3\n Line 4\nLine 5\nLine 6");
-const u8 gText_LetterPageTwo[] = _("Page 2\na really really really lo- a really reall");
+const u8 gText_LetterPageOne[]                  = _("Page 1\nLine 2\n Line3\n Line 4\nLine 5\nLine 6");
+const u8 gText_LetterPageTwo[]                  = _("Page 2\na really really really lo- a really reall");
 
-const u8 gText_LetterRiddleDecodedPageOne[] = _("Riddle Page 1");
+// Riddle
+const u8 gText_LetterRiddleEncodedPageOne[]     = _("Aslksdfj aslkd askik, alkkf. Iaeh\nalkiofn aoskdi si isken lokan.\nOkdl iskdnl ahwifn alski okwqn");
 
-const u8 gText_LetterMelMikeDecodedPageOne[] = _("Mel & Mike Page 1");
+const u8 gText_LetterRiddleDecodedPageOne[]     = _("Feathers which seven colors do glow\nbring joy beneath a rainbow.\n\nPowerful two wings will tear\napart houses, you must beware.");
+const u8 gText_LetterRiddleDecodedPageTwo[]     = _("A ticket with permission to sail away\ngrants those who hold passageway.\n\nIn the place your journey did start,\nI have left a gift to impart.");
 
-const u8 gText_LetterTyAlexDecodedPageOne[] = _("Ty & Alex Page 1");
+// Mel and Mike
+const u8 gText_LetterMelMikeEncodedPageOne[]        = _("Kanel, ajsifnhwh, olnsjkik shamki\nisk hehn laosk. Ia shwil opnfjs;\nwnqb sinqpg aoslng. alsidn aoso\nalsk, ahsi is qn lown.");
 
-const u8 gText_LetterMaryAricDecodedPageOne[] = _("Mary & Aric Page 1");
+const u8 gText_LetterMelMikeDecodedPageOne[]        = _("My sweet Sarita\nAHHHHH SURPRISE.\nCongratulations my bestie!\nI'm so excited for you both and\nI can't wait to see your love story");
+const u8 gText_LetterMelMikeDecodedPageTwo[]        = _("continue to unfold!\nI'm already emotional over how we're\ngoing to remember this forever.\nWe are definitely going to have\nstories about this time while");
+const u8 gText_LetterMelMikeDecodedPageThree[]      = _("rocking side-by-side on a little\nporch sipping sangria at 2pm\non a random Tuesday.\n\nLove you more than life itself");
+const u8 gText_LetterMelMikeDecodedPageFour[]       = _("Cheers to lifelong love in all forms!\n    - Mel\n\nSarah,\nI am blessed that my relationship\n");
+const u8 gText_LetterMelMikeDecodedPageFive[]       = _("with Mel has brought you both into\nmy life. My favorite memory with you\nboth is the hours we spent at the\nboard game cafe.\nIt was so much fun!");
+const u8 gText_LetterMelMikeDecodedPageSix[]        = _("I am looking forward to many more\ncouples game nights, beach trips,\nand nights out in Richmond with\nboth of you.\n    - Mike");
 
-const u8 gText_LetterMomDadDecodedPageOne[] = _("Mom & Dad Page 1");
+// Ty and Alex
+const u8 gText_LetterTyAlexEncodedPageOne[]         = _("idksl duwn qqnubn\nlan sibn asibnwl.\n\nlwnbu maol naigg hdni\nalsn budn qpbunm.");
+const u8 gText_LetterTyAlexEncodedPageTwo[]         = _("hqybns ikdls, iqhgn, ansu\nansol quako poqkdt.\n\nmsun bnsk ndun, aqqb\nanbio o; isltrobpab aunoqp.");
 
-const u8 gText_LetterBroSisDecodedPageOne[] = _("Bro & Sis Page 1");
+const u8 gText_LetterTyAlexDecodedPageOne[]         = _("");
+const u8 gText_LetterTyAlexDecodedPageTwo[]         = _("");
+const u8 gText_LetterTyAlexDecodedPageThree[]       = _("");
+const u8 gText_LetterTyAlexDecodedPageFour[]        = _("");
+const u8 gText_LetterTyAlexDecodedPageFive[]        = _("");
+const u8 gText_LetterTyAlexDecodedPageSix[]         = _("");
 
-const u8 gText_LetterChrisDecodedPageOne[] = _("Chris Page 1");
+// Mary and Aric
+const u8 gText_LetterMaryAricEncodedPageOne[]       = _("snbgybndk, siwlmfnb... sofbnwl\nosnfbatv aopsiob. Ansdu aansu\n\nsnwubnw pabmsn yabqpbp anmso\nnasybnb aslbqtcvsa. afst ksl...");
+const u8 gText_LetterMaryAricEncodedPageTwo[]       = _("hqybns ikdls, iqhgn, ansu\nansol quako poqkdt.\n\nKanel, ajsifnhwh, olnsjkik shamki\nisk hehn laosk. Ia shwil opnfjs");
+
+const u8 gText_LetterMaryAricDecodedPageOne[]       = _("");
+const u8 gText_LetterMaryAricDecodedPageTwo[]       = _("");
+const u8 gText_LetterMaryAricDecodedPageThree[]     = _("");
+const u8 gText_LetterMaryAricDecodedPageFour[]      = _("");
+const u8 gText_LetterMaryAricDecodedPageFive[]      = _("");
+const u8 gText_LetterMaryAricDecodedPageSix[]       = _("");
+
+// Mom and Dad
+const u8 gText_LetterMomDadEncodedPageOne[]         = _("isk hehn laosk. Ia shwil opnfjs;\nwnqb sinqpg aoslng. alsidn aoso\nalsk, ahsi is qn lown.\nsnwubnw pabmsn yabqpbp anmso");
+
+const u8 gText_LetterMomDadDecodedPageOne[]         = _("Sarah,\nI am not sure you know how truly\nspecial of a young woman you are.\nMaybe now you do.\nYou have come through some");
+const u8 gText_LetterMomDadDecodedPageTwo[]         = _("challenging times, fought for your\nown well-being and come out on the\nother side this beautiful,\ncourageous, powerful, and brilliant\nwoman. Really, you were all those");
+const u8 gText_LetterMomDadDecodedPageThree[]       = _("things before, but maybe did not\nrealize it then. I am so beyond\nproud of you. You have a kind and\ncompassionate heart and a love for\nnature and animals and all things");
+// TODO: page 4 looks scuffed...
+const u8 gText_LetterMomDadDecodedPageFour[]        = _("good in the world.\nYou have chosen your life partner\nwell. Maybe the universe chose for\nyou both because you seem so well\nsuited for each other. I love when we");
+const u8 gText_LetterMomDadDecodedPageFive[]        = _("chat and you constantly find ways\nto tell me he is your best friend.\nThis is the foundation for\na lifetime of happiness.\nLove you with all my heart,\n    - Mom");
+const u8 gText_LetterMomDadDecodedPageSix[]         = _("My dearest Priss,\nMan's search for the meaning of life\nneeds to go no further than the\nbirth of a child. From the moment I\nheld you for the first time,");
+const u8 gText_LetterMomDadDecodedPageSeven[]       = _("I knew you would be mine forever.\nI have such clear mental pictures of\nyou as a little girl, bounding down\nthe sidewalk, catching a fish, riding\nmy shoulders, squeezing your sister");
+const u8 gText_LetterMomDadDecodedPageEight[]       = _("in a hug, and owning your terrirtory\non the soccer field and the\nbasketball court, and of course, our\nfun with firearms.\nI love how you are the perfect big");
+const u8 gText_LetterMomDadDecodedPageNine[]        = _("sister, a little bossy, a little\ndemanding but alway there, always\nstrong, always reliable, always fun\nalways, always, always.\nYou are so amazing, I really do not");
+const u8 gText_LetterMomDadDecodedPageTen[]         = _("know where to stop so I am going to\nsay this. You will always be mine, my\nPriss, only now I get the pleasure of\nsharing you, watching you continue\nyour journey with the love of your\nlife. Love you forever,   - Dad");
+
+// Bro and Sis
+const u8 gText_LetterBroSisEncodedPageOne[]         = _("lkiofn aoskdi si isken lokan.\nOkdl iskdnl ahwifn alski okwqn\nisk hehn laosk. Ia shwil opnfjs;\nwnqb sinqpg aoslng.");
+
+const u8 gText_LetterBroSisDecodedPageOne[]         = _("Sarah,\nBeing your sister I've had the\npleasure of going through the many\nphases of our lives together and I\ngotta say you are at the best stage");
+const u8 gText_LetterBroSisDecodedPageTwo[]         = _("of your life right now with Chris.\nHe is perfect for you and I'm\nthankful that you have him because\nbeing with him has helped make you\nwhole. I am 100% confident that you");
+const u8 gText_LetterBroSisDecodedPageThree[]       = _("two will have the best life together\nexactly how you want it. I love you\nso very much and I love Chris too\nbecause the way he loves my sister!\nSarah Panera + Christmas = <3 4 eva\n    - Hannah");
+const u8 gText_LetterBroSisDecodedPageFour[]        = _("");
+const u8 gText_LetterBroSisDecodedPageFive[]        = _("");
+const u8 gText_LetterBroSisDecodedPageSix[]         = _("");
+const u8 gText_LetterBroSisDecodedPageSeven[]       = _("");
+
+// Chris
+const u8 gText_LetterChrisEncodedPageOne[]          = _("hqybns ikdls, iqhgn, ansu\nansol quako poqkdt.\nKanel, ajsifnhwh, olnsjkik shamki\nisk hehn laosk. Ia shwil opnfjs\nOkdl iskdnl ahwifn alski okwqn");
+
+const u8 gText_LetterChrisDecodedPageOne[]          = _("Sarah,\nI'm sure by now you've guessed\nwhat's happening. Hopefully I was\nable to surprise you just a bit.\nRight now, I'm sitting next to you");
+const u8 gText_LetterChrisDecodedPageTwo[]          = _("while you play Zelda and the dogs\nare surrounding us. I can't imagine\nmany better ways to spend a\nSaturday night.\nAt some point I promised you a longer");
+const u8 gText_LetterChrisDecodedPageThree[]        = _("letter and I hope 7 letters makes up\nfor the time you've had to wait. You\nare my favorite person - my best\nfriend. I am truly, madly, deeply in\nlove with you. I am obsessed with you.");
+const u8 gText_LetterChrisDecodedPageFour[]         = _("I'm so proud of everything you've\naccomplished since we've been\ntogether. I've watched you finish\nschool, start a career, and\nabsolutely KILL it at your job. I");
+const u8 gText_LetterChrisDecodedPageFive[]         = _("can't wait for the day when you're\nrunning things from the top. I'll be\nwaiting at home with hot, fresh\nbutter noodles in a little maid\noutfit for you.");
+const u8 gText_LetterChrisDecodedPageSix[]          = _("I can't wait to spend the rest of my\nlife with you, making memories with\nall of our friends and family.\nJust stay away from my ice cream ;)\nLove you tons,\n    - Chris");

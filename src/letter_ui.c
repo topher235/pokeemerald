@@ -54,96 +54,133 @@ enum WindowIds
     WINDOW_1,
 };
 
-static const u8 *const sLetters[14][2] = 
+static const u8 *const sLetters[14][10] = 
 {
     [LETTER_RIDDLE_ENCODED] = 
     {
-        gText_LetterPageOne,
-        gText_LetterPageTwo,
+        gText_LetterRiddleEncodedPageOne,
     },
 
     [LETTER_RIDDLE_DECODED] =
     {
         gText_LetterRiddleDecodedPageOne,
+        gText_LetterRiddleDecodedPageTwo,
     },
 
     [LETTER_MEL_MIKE_ENCODED] =
     {
-
+        gText_LetterMelMikeEncodedPageOne,
     },
 
     [LETTER_MEL_MIKE_DECODED] =
     {
         gText_LetterMelMikeDecodedPageOne,
+        gText_LetterMelMikeDecodedPageTwo,
+        gText_LetterMelMikeDecodedPageThree,
+        gText_LetterMelMikeDecodedPageFour,
+        gText_LetterMelMikeDecodedPageFive,
+        gText_LetterMelMikeDecodedPageSix,
     },
 
     [LETTER_TY_ALEX_ENCODED] =
     {
-
+        gText_LetterTyAlexEncodedPageOne,
+        gText_LetterTyAlexEncodedPageTwo,
     },
 
     [LETTER_TY_ALEX_DECODED] =
     {
         gText_LetterTyAlexDecodedPageOne,
+        gText_LetterTyAlexDecodedPageTwo,
+        gText_LetterTyAlexDecodedPageThree,
+        gText_LetterTyAlexDecodedPageFour,
+        gText_LetterTyAlexDecodedPageFive,
+        gText_LetterTyAlexDecodedPageSix,
     },
 
     [LETTER_MARY_ARIC_ENCODED] =
     {
-
+        gText_LetterMaryAricEncodedPageOne,
+        gText_LetterMaryAricEncodedPageTwo,
     },
 
     [LETTER_MARY_ARIC_DECODED] =
     {
         gText_LetterMaryAricDecodedPageOne,
+        gText_LetterMaryAricDecodedPageTwo,
+        gText_LetterMaryAricDecodedPageThree,
+        gText_LetterMaryAricDecodedPageFour,
+        gText_LetterMaryAricDecodedPageFive,
+        gText_LetterMaryAricDecodedPageSix,
     },
 
     [LETTER_MOM_DAD_ENCODED] =
     {
-
+        gText_LetterMomDadEncodedPageOne,
     },
 
     [LETTER_MOM_DAD_DECODED] =
     {
         gText_LetterMomDadDecodedPageOne,
+        gText_LetterMomDadDecodedPageTwo,
+        gText_LetterMomDadDecodedPageThree,
+        gText_LetterMomDadDecodedPageFour,
+        gText_LetterMomDadDecodedPageFive,
+        gText_LetterMomDadDecodedPageSix,
+        gText_LetterMomDadDecodedPageSeven,
+        gText_LetterMomDadDecodedPageEight,
+        gText_LetterMomDadDecodedPageNine,
+        gText_LetterMomDadDecodedPageTen,
     },
 
     [LETTER_BRO_SIS_ENCODED] =
     {
-
+        gText_LetterBroSisEncodedPageOne,
     },
 
     [LETTER_BRO_SIS_DECODED] =
     {
         gText_LetterBroSisDecodedPageOne,
+        gText_LetterBroSisDecodedPageTwo,
+        gText_LetterBroSisDecodedPageThree,
+        gText_LetterBroSisDecodedPageFour,
+        gText_LetterBroSisDecodedPageFive,
+        gText_LetterBroSisDecodedPageSix,
+        gText_LetterBroSisDecodedPageSeven,
     },
 
     [LETTER_CHRIS_ENCODED] =
     {
-
+        gText_LetterChrisEncodedPageOne,
     },
 
     [LETTER_CHRIS_DECODED] =
     {
         gText_LetterChrisDecodedPageOne,
+        gText_LetterChrisDecodedPageTwo,
+        gText_LetterChrisDecodedPageThree,
+        gText_LetterChrisDecodedPageFour,
+        gText_LetterChrisDecodedPageFive,
+        gText_LetterChrisDecodedPageSix,
     },
 };
 
 static const u8 sLettersMaxPages[14] =
 {
-    [LETTER_RIDDLE_ENCODED] = 2,
-    [LETTER_RIDDLE_DECODED] = 1,
+    [LETTER_RIDDLE_ENCODED] = 1,
+    [LETTER_RIDDLE_DECODED] = 2,
     [LETTER_MEL_MIKE_ENCODED] = 1,
-    [LETTER_MEL_MIKE_DECODED] = 1,
-    [LETTER_TY_ALEX_ENCODED] = 1,
-    [LETTER_TY_ALEX_DECODED] = 1,
-    [LETTER_MARY_ARIC_ENCODED] = 1,
-    [LETTER_MARY_ARIC_DECODED] = 1,
+    [LETTER_MEL_MIKE_DECODED] = 6,
+    [LETTER_TY_ALEX_ENCODED] = 2,
+    [LETTER_TY_ALEX_DECODED] = 6,
+    [LETTER_MARY_ARIC_ENCODED] = 2,
+    [LETTER_MARY_ARIC_DECODED] = 6,
     [LETTER_MOM_DAD_ENCODED] = 1,
-    [LETTER_MOM_DAD_DECODED] = 1,
+    [LETTER_MOM_DAD_DECODED] = 10,
     [LETTER_BRO_SIS_ENCODED] = 1,
-    [LETTER_BRO_SIS_DECODED] = 1,
+    [LETTER_BRO_SIS_DECODED] = 7,
     [LETTER_CHRIS_ENCODED] = 1,
-    [LETTER_CHRIS_DECODED] = 1,
+    [LETTER_CHRIS_DECODED] = 6,
 };
 
 
