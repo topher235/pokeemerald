@@ -3057,9 +3057,6 @@ extern const u8 gText_LetterTyAlexEncodedPageTwo[];
 extern const u8 gText_LetterTyAlexDecodedPageOne[];
 extern const u8 gText_LetterTyAlexDecodedPageTwo[];
 extern const u8 gText_LetterTyAlexDecodedPageThree[];
-extern const u8 gText_LetterTyAlexDecodedPageFour[];
-extern const u8 gText_LetterTyAlexDecodedPageFive[];
-extern const u8 gText_LetterTyAlexDecodedPageSix[];
 
 extern const u8 gText_LetterMaryAricEncodedPageOne[];
 extern const u8 gText_LetterMaryAricEncodedPageTwo[];
@@ -3069,7 +3066,6 @@ extern const u8 gText_LetterMaryAricDecodedPageTwo[];
 extern const u8 gText_LetterMaryAricDecodedPageThree[];
 extern const u8 gText_LetterMaryAricDecodedPageFour[];
 extern const u8 gText_LetterMaryAricDecodedPageFive[];
-extern const u8 gText_LetterMaryAricDecodedPageSix[];
 
 extern const u8 gText_LetterMomDadEncodedPageOne[];
 
