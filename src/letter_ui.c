@@ -93,9 +93,6 @@ static const u8 *const sLetters[14][10] =
         gText_LetterTyAlexDecodedPageOne,
         gText_LetterTyAlexDecodedPageTwo,
         gText_LetterTyAlexDecodedPageThree,
-        gText_LetterTyAlexDecodedPageFour,
-        gText_LetterTyAlexDecodedPageFive,
-        gText_LetterTyAlexDecodedPageSix,
     },
 
     [LETTER_MARY_ARIC_ENCODED] =
@@ -111,7 +108,6 @@ static const u8 *const sLetters[14][10] =
         gText_LetterMaryAricDecodedPageThree,
         gText_LetterMaryAricDecodedPageFour,
         gText_LetterMaryAricDecodedPageFive,
-        gText_LetterMaryAricDecodedPageSix,
     },
 
     [LETTER_MOM_DAD_ENCODED] =
@@ -172,9 +168,9 @@ static const u8 sLettersMaxPages[14] =
     [LETTER_MEL_MIKE_ENCODED] = 1,
     [LETTER_MEL_MIKE_DECODED] = 6,
     [LETTER_TY_ALEX_ENCODED] = 2,
-    [LETTER_TY_ALEX_DECODED] = 6,
+    [LETTER_TY_ALEX_DECODED] = 3,
     [LETTER_MARY_ARIC_ENCODED] = 2,
-    [LETTER_MARY_ARIC_DECODED] = 6,
+    [LETTER_MARY_ARIC_DECODED] = 5,
     [LETTER_MOM_DAD_ENCODED] = 1,
     [LETTER_MOM_DAD_DECODED] = 10,
     [LETTER_BRO_SIS_ENCODED] = 1,
