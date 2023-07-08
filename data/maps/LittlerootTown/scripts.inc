@@ -1118,35 +1118,7 @@ LittlerootTown_EventScript_WarpNavelRock::
 	// warp MAP_LILYCOVE_CITY, 0, 16
 	// warp MAP_RUSTBORO_CITY, 0, 0, 0
 
-	givemon SPECIES_RAYQUAZA, 100
-	givemon SPECIES_MILOTIC, 5
-	givemon SPECIES_MILOTIC, 5
-	givemon SPECIES_MILOTIC, 5
-	givemon SPECIES_MILOTIC, 5
-	additem ITEM_LETTER_1_ENCODED, 1
-	setflag FLAG_LETTER_1_DECODED
-	// warp MAP_LILYCOVE_CITY, 0, 16
-	
-	additem ITEM_LETTER_1_DECODED
-	additem ITEM_LETTER_1_ENCODED
-	
-	additem ITEM_LETTER_2_ENCODED
-	additem ITEM_LETTER_2_DECODED
-
-	additem ITEM_LETTER_3_ENCODED
-	additem ITEM_LETTER_3_DECODED
-
-	additem ITEM_LETTER_4_ENCODED
-	additem ITEM_LETTER_4_DECODED
-
-	additem ITEM_LETTER_5_ENCODED
-	additem ITEM_LETTER_5_DECODED
-
-	additem ITEM_LETTER_6_ENCODED
-	additem ITEM_LETTER_6_DECODED
-
-	additem ITEM_LETTER_7_ENCODED
-	additem ITEM_LETTER_7_DECODED
+	setvar VAR_MYSTIC_TICKET_STATE_MAY, 1
 
 	release
 	end
@@ -1157,7 +1129,7 @@ WarpLilycove::
 	end
 
 LittleRoot_Text_WarpNavelRockOne:
-	.string "Go catch a pokemon.$"
+	.string "Testing first text message.$"
 
 LittleRoot_Text_WarpNavelRockTwo:
 	.string "Enjoy your trip.$"
