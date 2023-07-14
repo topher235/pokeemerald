@@ -30,12 +30,6 @@ RustboroCity_Gym_EventScript_GiveRockTomb::
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM39
 	msgbox RustboroCity_Gym_Text_ExplainRockTomb, MSGBOX_DEFAULT
-	goto RustboroCity_Gym_EventScript_GiveLetter1Encoded
-	end
-
-RustboroCity_Gym_EventScript_GiveLetter1Encoded::
-	msgbox RustboroCity_Gym_ExplainLetter1Encoded, MSGBOX_DEFAULT
-	giveitem ITEM_LETTER_1_ENCODED, 1
 	release
 	end
 

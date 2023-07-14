@@ -2069,8 +2069,8 @@ static s8 NewGameBirchSpeech_ProcessGenderMenuInput(void)
 
 static void NewGameBirchSpeech_SetDefaultPlayerGender()
 {
-    int gender = MALE;
-    // int gender = FEMALE;
+    // int gender = MALE;
+    int gender = FEMALE;
     gSaveBlock2Ptr->playerGender = gender;
 }
 
