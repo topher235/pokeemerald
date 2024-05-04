@@ -4537,4 +4537,19 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
+
+
+    [ITEM_CUSTOM_LETTER] =
+    {
+        .name = _("Letter 1"),
+        .itemId = ITEM_CUSTOM_LETTER,
+        .price = 0,
+        .description = sLetterCustomDesc,
+        .importance = 1,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Letter,
+        .secondaryId = LETTER,
+    },
 };

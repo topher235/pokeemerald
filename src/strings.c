@@ -1819,3 +1819,9 @@ const u8 gText_Answer[] = _("ANSWER");
 const u8 gText_PokeBalls[] = _("POKé BALLS");
 const u8 gText_Berry[] = _("BERRY");
 const u8 gText_Berries[] = _("BERRIES");
+
+// Letters
+
+const u8 gText_LetterPageOne[] = _("Page 1");
+const u8 gText_LetterPageTwo[] = _("Page 2");
+const u8 gText_LetterPageThree[] = _("Page 3");

@@ -20,6 +20,7 @@
 #include "item.h"
 #include "item_menu.h"
 #include "item_use.h"
+#include "letter_ui.h"
 #include "mail.h"
 #include "main.h"
 #include "menu.h"
@@ -40,6 +41,7 @@
 #include "constants/event_objects.h"
 #include "constants/item_effects.h"
 #include "constants/items.h"
+#include "constants/letters.h"
 #include "constants/songs.h"
 
 static void SetUpItemUseCallback(u8);
@@ -70,6 +72,7 @@ static void Task_UseRepel(u8);
 static void Task_CloseCantUseKeyItemMessage(u8);
 static void SetDistanceOfClosestHiddenItem(u8, s16, s16);
 static void CB2_OpenPokeblockFromBag(void);
+static void ItemUseCB_Letter();
 
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
@@ -1125,6 +1128,18 @@ void ItemUseInBattle_EnigmaBerry(u8 taskId)
 void ItemUseOutOfBattle_CannotUse(u8 taskId)
 {
     DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+}
+
+void ItemUseOutOfBattle_Letter(u8 taskId)
+{
+    gBagMenu->newScreenCallback = ItemUseCB_Letter;
+    Task_FadeAndCloseBagMenu(taskId);
+}
+
+void ItemUseCB_Letter()
+{
+    const u8 letter = gItems[gSpecialVar_ItemId].secondaryId;
+    LetterUI_Init(CB2_ReturnToBagMenuPocket, letter);
 }
 
 #undef tUsingRegisteredKeyItem
