@@ -1825,3 +1825,6 @@ const u8 gText_Berries[] = _("BERRIES");
 const u8 gText_LetterPageOne[] = _("Page 1");
 const u8 gText_LetterPageTwo[] = _("Page 2");
 const u8 gText_LetterPageThree[] = _("Page 3");
+
+const u8 gText_Letter1PageOne[] = _("A new letter.");
+const u8 gText_Letter1PageTwo[] = _("Can be easily added.");

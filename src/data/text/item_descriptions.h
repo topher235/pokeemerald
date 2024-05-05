@@ -1553,3 +1553,7 @@ static const u8 sOldSeaMapDesc[] = _(
 static const u8 sLetterCustomDesc[] = _(
     "A letter that is\n"
     "from mom.");
+
+static const u8 sLetter1Desc[] = _(
+    "An additional\n"
+    "letter.");

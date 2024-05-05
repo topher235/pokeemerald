@@ -404,6 +404,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
 
     // Letters
     [ITEM_CUSTOM_LETTER] = {gItemIcon_DreamMail, gItemIconPalette_DreamMail},
+    [ITEM_LETTER_1] = {gItemIcon_HarborMail, gItemIconPalette_HarborMail},
     // options:
     // bead_mail
     // dream_mail

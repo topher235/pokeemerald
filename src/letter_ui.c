@@ -36,6 +36,16 @@
 #include "constants/letters.h"
 
 /*
+ * To add a new letter item:
+ *   1. Add a new item definition to `include/constants/items.h` and increment the item count
+ *   2. Add a new constant to `include/constants/letters.h`
+ *   3. Define the variables for the strings of each page's contents in `include/strings.h`
+ *   4. Implement each page's variables in `src/strings.c`
+ *   5. Add an entry for the new letter's icon in `src/data/item_icon_table.h`
+ *   6. [optional] Add an entry for the new letter's description to `src/data/text/item_descriptions.h`
+ *   7. Add the letter item entry to `src/data/items.h` setting the name, itemId, description, and secondaryId
+ *   8. Update `sLetters` and `sLettersMaxPages` arrays and array sizes here in `src/letter_ui.c`
+ *     - The new array index is the constant from `include/constants/letters.h`
  * 
  */
 
@@ -53,7 +63,8 @@ enum WindowIds
     WINDOW_1,
 };
 
-static const u8 *const sLetters[1][3] = 
+// index constants defined in `include/constants/letters.h`
+static const u8 *const sLetters[2][3] = 
 {
     [LETTER] = 
     {
@@ -61,11 +72,17 @@ static const u8 *const sLetters[1][3] =
         gText_LetterPageTwo,
         gText_LetterPageThree,
     },
+    [LETTER_1] =
+    {
+        gText_Letter1PageOne,
+        gText_Letter1PageTwo,
+    },
 };
 
-static const u8 sLettersMaxPages[1] =
+static const u8 sLettersMaxPages[2] =
 {
     [LETTER] = 3,
+    [LETTER_1] = 2,
 };
 
 

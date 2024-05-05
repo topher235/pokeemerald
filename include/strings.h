@@ -3030,5 +3030,7 @@ extern const u8 gText_TellHimTheWords[];
 extern const u8 gText_LetterPageOne[];
 extern const u8 gText_LetterPageTwo[];
 extern const u8 gText_LetterPageThree[];
+extern const u8 gText_Letter1PageOne[];
+extern const u8 gText_Letter1PageTwo[];
 
 #endif // GUARD_STRINGS_H

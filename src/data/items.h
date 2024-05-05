@@ -4552,4 +4552,18 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_Letter,
         .secondaryId = LETTER,
     },
+
+    [ITEM_LETTER_1] =
+    {
+        .name = _("NEW LETTER"),
+        .itemId = ITEM_LETTER_1,
+        .price = 0,
+        .description = sLetter1Desc,
+        .importance = 1,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Letter,
+        .secondaryId = LETTER_1, // the index that correlates to the pages and max pages arrays in `letter_ui.c`
+    },
 };
